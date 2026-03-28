@@ -1,0 +1,75 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const content = {
+  en: {
+    title: "Prof. Michał Jackowski",
+    tagline: "Legal Scholar · AI Governance Expert · Attorney at Law",
+    headline: "Shaping the governance of artificial intelligence at the intersection of law, policy, and practice.",
+    ctaPrimary: "About me",
+    ctaSecondary: "Get in touch"
+  },
+  pl: {
+    title: "Prof. Michał Jackowski",
+    tagline: "Prawnik · Ekspert AI Governance · Adwokat",
+    headline: "Kształtowanie governance sztucznej inteligencji na styku prawa, polityki i praktyki.",
+    ctaPrimary: "O mnie",
+    ctaSecondary: "Kontakt"
+  }
+};
+
+const t = content[lang];
+---
+
+<section class="py-16 md:py-24 lg:py-32">
+  <div class="max-w-content mx-auto px-6 lg:px-12">
+    <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+      <!-- Photo -->
+      <div class="flex-shrink-0">
+        <div class="w-40 h-40 md:w-52 md:h-52 rounded-full bg-gray-200 overflow-hidden ring-4 ring-gray-100">
+          <img
+            src="/images/michal-jackowski.jpg"
+            alt={t.title}
+            class="w-full h-full object-cover object-top"
+          />
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="text-center md:text-left">
+        <h1 class="text-display text-navy mb-3">
+          {t.title}
+        </h1>
+
+        <p class="text-h2 text-slate mb-6 font-normal">
+          {t.tagline}
+        </p>
+
+        <p class="text-body text-navy max-w-xl mb-8 leading-relaxed">
+          {t.headline}
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a
+            href={lang === 'en' ? `/en/contact` : `/pl/kontakt`}
+            class="inline-flex items-center justify-center px-6 py-3 bg-blue text-white font-medium rounded-md hover:bg-blue-light transition-colors"
+          >
+            {t.ctaSecondary}
+          </a>
+          <a
+            href="https://calendar.app.google/HhMAL6Nedi2skE3W8"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center px-6 py-3 border border-navy text-navy font-medium rounded-md hover:bg-navy hover:text-white transition-colors"
+          >
+            {lang === 'en' ? 'Book a meeting' : 'Umów spotkanie'}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

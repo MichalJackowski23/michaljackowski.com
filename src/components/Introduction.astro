@@ -1,0 +1,67 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const content = {
+  en: {
+    text: "Prof. Michał Jackowski is a legal scholar and attorney shaping AI governance frameworks at the European level. He combines academic research with practical legal experience — advising on AI regulation, building legal technology, and educating the next generation of AI-aware lawyers.",
+    affiliations: [
+      "Professor of AI & Law at SWPS and ALK",
+      "Visiting Scholar at Cambridge University",
+      "Advisor to EU AI Office, CEN-CENELEC, PKN, PIIT, Ministry of Digital Affairs",
+      "CEO & Co-founder of AnyLawyer",
+      "Partner at DSK Kancelaria"
+    ],
+    credentials: [
+      "Executive MBA — ESCP Europe",
+      "Professional Scrum Master I",
+      "Certified Business Psychologist"
+    ]
+  },
+  pl: {
+    text: "Prof. Michał Jackowski to prawnik i naukowiec kształtujący ramy governance AI na poziomie europejskim. Łączy badania akademickie z praktycznym doświadczeniem prawniczym — doradzając w zakresie regulacji AI, budując technologie prawnicze i kształcąc nowe pokolenie prawników świadomych AI.",
+    affiliations: [
+      "Profesor AI & Prawo na SWPS i ALK",
+      "Visiting Scholar na Cambridge University",
+      "Doradca EU AI Office, CEN-CENELEC, PKN, PIIT, Ministerstwa Cyfryzacji",
+      "CEO i Współzałożyciel AnyLawyer",
+      "Partner w DSK Kancelaria"
+    ],
+    credentials: [
+      "Executive MBA — ESCP Europe",
+      "Professional Scrum Master I",
+      "Certyfikowany Psycholog Biznesu"
+    ]
+  }
+};
+
+const t = content[lang];
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-prose mx-auto px-6 lg:px-12 text-center">
+    <p class="text-body text-navy leading-relaxed mb-8">
+      {t.text}
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-small text-slate mb-6">
+      {t.affiliations.map((affiliation, index) => (
+        <span class="flex items-center">
+          {index > 0 && <span class="hidden sm:inline mr-6">·</span>}
+          {affiliation}
+        </span>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3">
+      {t.credentials.map((credential) => (
+        <span class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium">
+          {credential}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>

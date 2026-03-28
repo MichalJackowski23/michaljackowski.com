@@ -1,0 +1,241 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Kontakt | Prof. Michał Jackowski" lang="pl">
+  <Header lang="pl" />
+  <main>
+    <!-- Hero -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Kontakt</p>
+        <h1 class="text-display text-navy mb-6">Skontaktuj się</h1>
+        <p class="text-h2 text-slate max-w-2xl">
+          Dostępny dla doradztwa prawnego, wystąpień, zapytań medialnych i współpracy akademickiej.
+        </p>
+      </div>
+    </section>
+
+    <!-- Direct Contact -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Email -->
+          <div class="bg-navy p-6 rounded-lg text-center">
+            <div class="text-3xl mb-4">✉️</div>
+            <h2 class="text-h2 text-white mb-2">Email</h2>
+            <a
+              href="mailto:m.jackowski@dsk-kancelaria.pl"
+              class="text-body text-gray-300 hover:text-white transition-colors"
+            >
+              m.jackowski@dsk-kancelaria.pl
+            </a>
+          </div>
+
+          <!-- Phone -->
+          <div class="bg-navy p-6 rounded-lg text-center">
+            <div class="text-3xl mb-4">📞</div>
+            <h2 class="text-h2 text-white mb-2">Telefon</h2>
+            <a
+              href="tel:+48504139644"
+              class="text-body text-gray-300 hover:text-white transition-colors"
+            >
+              +48 504 139 644
+            </a>
+          </div>
+
+          <!-- Calendar -->
+          <div class="bg-navy p-6 rounded-lg text-center">
+            <div class="text-3xl mb-4">📅</div>
+            <h2 class="text-h2 text-white mb-2">Umów rozmowę</h2>
+            <a
+              href="https://calendar.app.google/HhMAL6Nedi2skE3W8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-body text-gray-300 hover:text-white transition-colors"
+            >
+              Zarezerwuj spotkanie <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Legal Advisory -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">⚖️</div>
+            <h2 class="text-h2 text-navy mb-2">Doradztwo prawne</h2>
+            <p class="text-body text-slate mb-4">
+              Regulacje AI, zgodność i prawo technologii poprzez DSK Kancelaria.
+            </p>
+            <a
+              href="https://dsk-kancelaria.pl/zespol/michal-jackowski/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-small text-blue font-medium hover:underline"
+            >
+              Kontakt przez DSK <span>↗</span>
+            </a>
+          </div>
+
+          <!-- Speaking -->
+          <div id="wystapienia" class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">🎤</div>
+            <h2 class="text-h2 text-navy mb-2">Wystąpienia</h2>
+            <p class="text-body text-slate mb-4">
+              Keynote'y, panele i warsztaty o governance AI, legal tech i regulacji technologii.
+            </p>
+            <p class="text-small text-slate">
+              Tematy: EU AI Act, ramy governance AI, trendy legal tech, nadzór ludzki w AI, ochrona danych, data governance, cybersecurity.
+            </p>
+          </div>
+
+          <!-- Media -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">📺</div>
+            <h2 class="text-h2 text-navy mb-2">Zapytania medialne</h2>
+            <p class="text-body text-slate mb-4">
+              Dostępny na wywiady, ekspercki komentarz i zapytania prasowe o prawo AI i regulacje technologii.
+            </p>
+            <p class="text-small text-slate">
+              Regularny komentator w mediach prawnych i technologicznych.
+            </p>
+          </div>
+
+          <!-- Academic -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">🎓</div>
+            <h2 class="text-h2 text-navy mb-2">Współpraca akademicka</h2>
+            <p class="text-body text-slate mb-4">
+              Partnerstwa badawcze, wspólne publikacje i wymiany akademickie o governance AI.
+            </p>
+            <p class="text-small text-slate">
+              Obecnie afiliowany z Uniwersytetem SWPS, Akademią Leona Koźmińskiego i University of Cambridge jako visiting scholar.
+            </p>
+          </div>
+
+          <!-- Podcast -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">🎙️</div>
+            <h2 class="text-h2 text-navy mb-2">Goście podcastu</h2>
+            <p class="text-body text-slate mb-4">
+              Chcesz być gościem Monday Bagel? Zapraszam ekspertów z dziedziny AI, prawa i technologii.
+            </p>
+            <a
+              href="/pl/media#podcast"
+              class="text-small text-blue font-medium hover:underline"
+            >
+              Dowiedz się o podcaście →
+            </a>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">💼</div>
+            <h2 class="text-h2 text-navy mb-2">Połącz się</h2>
+            <p class="text-body text-slate mb-4">
+              Śledź aktualności o governance AI, spostrzeżenia legal tech i aktywności zawodowe.
+            </p>
+            <a
+              href="https://linkedin.com/in/michaljackowski"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-small text-blue font-medium hover:underline"
+            >
+              LinkedIn <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-2xl mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4 text-center">Wyślij wiadomość</h2>
+        <p class="text-body text-slate mb-8 text-center">
+          Wypełnij formularz poniżej, a odezwę się tak szybko, jak to możliwe.
+        </p>
+
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-small text-navy font-medium mb-2">Imię i nazwisko</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors"
+                placeholder="Twoje imię"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-small text-navy font-medium mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors"
+                placeholder="twoj@email.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-small text-navy font-medium mb-2">Temat</label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors bg-white"
+            >
+              <option value="">Wybierz temat</option>
+              <option value="legal">Doradztwo prawne</option>
+              <option value="speaking">Wystąpienie</option>
+              <option value="media">Zapytanie medialne</option>
+              <option value="academic">Współpraca akademicka</option>
+              <option value="podcast">Gość podcastu</option>
+              <option value="other">Inne</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-small text-navy font-medium mb-2">Wiadomość</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors resize-none"
+              placeholder="Twoja wiadomość..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-block px-8 py-3 bg-blue text-white font-medium rounded hover:bg-blue-light transition-colors"
+            >
+              Wyślij wiadomość
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+        <p class="text-small text-slate uppercase tracking-wide mb-2">Lokalizacja</p>
+        <p class="text-h1 text-navy">Poznań, Polska</p>
+        <p class="text-body text-slate mt-4">
+          Dostępny na spotkania osobiste w Polsce i całej Europie, a także konsultacje wirtualne na całym świecie.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer lang="pl" />
+</BaseLayout>

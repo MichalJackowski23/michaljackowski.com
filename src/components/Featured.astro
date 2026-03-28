@@ -1,0 +1,162 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const content = {
+  en: {
+    title: 'Recent & Upcoming',
+    types: {
+      upcoming: 'Upcoming',
+      publication: 'Publication',
+      podcast: 'Podcast'
+    },
+    readMore: 'Details',
+    read: 'Read',
+    listen: 'Listen',
+    items: [
+      {
+        type: 'upcoming',
+        date: 'June 2026 · Dublin',
+        title: 'ICON•S Annual Conference',
+        description: 'Human Oversight as a Constitutional Safeguard in AI Governance',
+        category: 'Presentation',
+        href: '/en/academia#speaking',
+        action: 'Details'
+      },
+      {
+        type: 'publication',
+        date: '2024',
+        title: 'Global Report on the State of AI in Legal Practice',
+        description: 'First international empirical study on AI adoption in law firms worldwide.',
+        category: 'Report',
+        href: 'https://globalailawreport.com',
+        action: 'Read',
+        external: true
+      },
+      {
+        type: 'podcast',
+        date: 'Episode 42 · November 2024',
+        title: 'The Future of AI Governance in Europe',
+        description: 'A deep dive into the EU AI Act implementation and what it means for businesses.',
+        category: 'Monday Bagel',
+        href: '/en/media#podcast',
+        action: 'Listen'
+      }
+    ]
+  },
+  pl: {
+    title: 'Aktualności',
+    types: {
+      upcoming: 'Nadchodzące',
+      publication: 'Publikacja',
+      podcast: 'Podcast'
+    },
+    readMore: 'Szczegóły',
+    read: 'Czytaj',
+    listen: 'Słuchaj',
+    items: [
+      {
+        type: 'upcoming',
+        date: 'Czerwiec 2026 · Dublin',
+        title: 'Konferencja ICON•S',
+        description: 'Nadzór ludzki jako konstytucyjne zabezpieczenie w governance AI',
+        category: 'Prezentacja',
+        href: '/pl/nauka#wystapienia',
+        action: 'Szczegóły'
+      },
+      {
+        type: 'publication',
+        date: '2024',
+        title: 'Globalny Raport o Stanie AI w Praktyce Prawniczej',
+        description: 'Pierwsze międzynarodowe badanie empiryczne nad adopcją AI w kancelariach prawnych.',
+        category: 'Raport',
+        href: 'https://globalailawreport.com',
+        action: 'Czytaj',
+        external: true
+      },
+      {
+        type: 'podcast',
+        date: 'Odcinek 42 · Listopad 2024',
+        title: 'Przyszłość Governance AI w Europie',
+        description: 'Dogłębna analiza wdrażania EU AI Act i jego znaczenia dla biznesu.',
+        category: 'Monday Bagel',
+        href: '/pl/media#podcast',
+        action: 'Słuchaj'
+      }
+    ]
+  }
+};
+
+const t = content[lang];
+
+const typeStyles = {
+  upcoming: 'text-blue border-blue',
+  publication: 'text-slate border-slate',
+  podcast: 'text-navy border-navy'
+};
+
+const typeIcons = {
+  upcoming: '📅',
+  publication: '📄',
+  podcast: '🎙️'
+};
+---
+
+<section class="py-16 md:py-20 bg-gray-50">
+  <div class="max-w-content mx-auto px-6 lg:px-12">
+    <h2 class="text-h1 text-navy mb-8">
+      {t.title}
+    </h2>
+
+    <div class="space-y-4">
+      {t.items.map((item) => (
+        <a
+          href={item.href}
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
+          class="group block p-6 bg-white border border-gray-200 rounded-lg hover:border-blue hover:shadow-md transition-all"
+        >
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div class="flex-1">
+              <!-- Type badge and date -->
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <span class={`inline-flex items-center gap-1 text-caption font-medium uppercase tracking-wide ${typeStyles[item.type]}`}>
+                  <span>{typeIcons[item.type]}</span>
+                  {t.types[item.type]}
+                </span>
+                <span class="text-caption text-slate">
+                  {item.date}
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-h2 text-navy mb-2 group-hover:text-blue transition-colors">
+                {item.title}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-small text-slate mb-3">
+                {item.description}
+              </p>
+
+              <!-- Category tag -->
+              <span class="text-caption text-slate bg-gray-100 px-2 py-1 rounded">
+                {item.category}
+              </span>
+            </div>
+
+            <!-- Action link -->
+            <div class="flex-shrink-0 md:self-center">
+              <span class="text-small text-blue font-medium group-hover:underline">
+                {item.action} →
+              </span>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,154 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const pillars = {
+  en: {
+    row1: [
+      {
+        id: 'practice',
+        title: 'Practice',
+        description: 'Legal advisory, AI implementation, Data Governance',
+        items: ['DSK Kancelaria', 'AI Projects', 'Data Governance', 'Tech M&A'],
+        link: '/en/practice'
+      },
+      {
+        id: 'governance',
+        title: 'Governance',
+        description: 'EU-level policy and international standards',
+        items: ['EU AI Office', 'GRAI', 'ITechLaw', 'CEN-CENELEC', 'LumiAI', 'GraceHopper'],
+        link: '/en/governance'
+      },
+      {
+        id: 'academia',
+        title: 'Academia',
+        description: 'Research, publications, and education',
+        items: ['SWPS', 'Cambridge', 'ALK', 'CLAIRE', 'Global Report', 'OUP'],
+        link: '/en/academia'
+      }
+    ],
+    row2: [
+      {
+        id: 'media',
+        title: 'Media',
+        description: 'Podcast and public presence',
+        items: ['Monday Bagel', '70+ Episodes', 'Speaking'],
+        link: '/en/media'
+      },
+      {
+        id: 'startup',
+        title: 'Startup',
+        description: 'LegalTech innovation',
+        items: ['AnyLawyer', 'CEO & Co-Founder'],
+        link: '/en/startup'
+      }
+    ],
+    explore: 'Explore'
+  },
+  pl: {
+    row1: [
+      {
+        id: 'practice',
+        title: 'Praktyka',
+        description: 'Doradztwo prawne, wdrożenia AI, Data Governance',
+        items: ['DSK Kancelaria', 'Projekty AI', 'Data Governance', 'Tech M&A'],
+        link: '/pl/praktyka'
+      },
+      {
+        id: 'governance',
+        title: 'Governance',
+        description: 'Polityka UE i standardy międzynarodowe',
+        items: ['EU AI Office', 'GRAI', 'ITechLaw', 'CEN-CENELEC', 'LumiAI', 'GraceHopper'],
+        link: '/pl/governance'
+      },
+      {
+        id: 'academia',
+        title: 'Nauka',
+        description: 'Badania, publikacje i edukacja',
+        items: ['SWPS', 'Cambridge', 'ALK', 'CLAIRE', 'Raport Globalny', 'OUP'],
+        link: '/pl/nauka'
+      }
+    ],
+    row2: [
+      {
+        id: 'media',
+        title: 'Media',
+        description: 'Podcast i obecność publiczna',
+        items: ['Monday Bagel', '70+ Odcinków', 'Wystąpienia'],
+        link: '/pl/media'
+      },
+      {
+        id: 'startup',
+        title: 'Startup',
+        description: 'Innowacje LegalTech',
+        items: ['AnyLawyer', 'CEO i Współzałożyciel'],
+        link: '/pl/startup'
+      }
+    ],
+    explore: 'Poznaj'
+  }
+};
+
+const t = pillars[lang];
+---
+
+<section class="py-16 md:py-20">
+  <div class="max-w-content mx-auto px-6 lg:px-12">
+    <!-- Row 1: Three pillars -->
+    <div class="grid md:grid-cols-3 gap-6 mb-6">
+      {t.row1.map((pillar) => (
+        <a
+          href={pillar.link}
+          class="group block p-6 bg-white border border-gray-200 rounded-lg hover:border-blue hover:shadow-md transition-all"
+        >
+          <h3 class="text-h2 text-navy mb-2 group-hover:text-blue transition-colors">
+            {pillar.title}
+          </h3>
+          <p class="text-small text-slate mb-4">
+            {pillar.description}
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {pillar.items.map((item) => (
+              <span class="text-caption text-slate bg-gray-100 px-2 py-1 rounded">
+                {item}
+              </span>
+            ))}
+          </div>
+          <span class="text-small text-blue font-medium group-hover:underline">
+            {t.explore} →
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Row 2: Two pillars (centered) -->
+    <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+      {t.row2.map((pillar) => (
+        <a
+          href={pillar.link}
+          class="group block p-6 bg-white border border-gray-200 rounded-lg hover:border-blue hover:shadow-md transition-all"
+        >
+          <h3 class="text-h2 text-navy mb-2 group-hover:text-blue transition-colors">
+            {pillar.title}
+          </h3>
+          <p class="text-small text-slate mb-4">
+            {pillar.description}
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            {pillar.items.map((item) => (
+              <span class="text-caption text-slate bg-gray-100 px-2 py-1 rounded">
+                {item}
+              </span>
+            ))}
+          </div>
+          <span class="text-small text-blue font-medium group-hover:underline">
+            {t.explore} →
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

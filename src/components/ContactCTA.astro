@@ -1,0 +1,41 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const content = {
+  en: {
+    title: 'Get in touch',
+    subtitle: 'Speaking inquiries · Media requests · Collaboration',
+    button: 'Contact',
+    href: '/en/contact'
+  },
+  pl: {
+    title: 'Skontaktuj się',
+    subtitle: 'Zapytania o wystąpienia · Media · Współpraca',
+    button: 'Kontakt',
+    href: '/pl/kontakt'
+  }
+};
+
+const t = content[lang];
+---
+
+<section class="py-16 md:py-20 bg-navy">
+  <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+    <h2 class="text-h1 text-white mb-4">
+      {t.title}
+    </h2>
+    <p class="text-body text-gray-300 mb-8">
+      {t.subtitle}
+    </p>
+    <a
+      href={t.href}
+      class="inline-block px-8 py-3 bg-white text-navy font-medium rounded hover:bg-gray-100 transition-colors"
+    >
+      {t.button}
+    </a>
+  </div>
+</section>

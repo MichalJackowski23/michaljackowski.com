@@ -1,0 +1,240 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const organizations = [
+  {
+    id: 'eu-ai-office',
+    name: 'EU AI Office',
+    role: 'Doradca',
+    description: 'Członek grupy ekspertów opracowującej Kodeks Postępowania dla AI Ogólnego Przeznaczenia oraz Kodeks Postępowania dotyczący oznaczania treści generowanych przez AI. Wkład w rozwój i wdrażanie EU AI Act, doradztwo w zakresie ram regulacyjnych i mechanizmów governance dla sztucznej inteligencji na poziomie europejskim.',
+    logo: '/images/logos/eu-ai-office.svg',
+    links: [
+      { label: 'GPAI Code of Practice', url: 'https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai' },
+      { label: 'AI-Generated Content Code', url: 'https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content' }
+    ]
+  },
+  {
+    id: 'grai',
+    name: 'GRAI',
+    role: 'Lider',
+    description: 'Lider grupy roboczej wspierającej polski rząd w zakresie AI. Grupa Robocza ds. Sztucznej Inteligencji przy Ministerstwie Cyfryzacji, kształtująca krajową strategię AI Polski i współpracę międzynarodową.',
+    logo: '/images/logos/grai.png',
+    link: 'https://ai.gov.pl/grupa-robocza-ai/wspolpraca-miedzynarodowa'
+  },
+  {
+    id: 'itechlaw',
+    name: 'ITechLaw',
+    role: 'Współprzewodniczący',
+    description: 'Współprzewodniczący Komitetu Legal Tech International Technology Law Association, wiodącej globalnej organizacji dla profesjonalistów prawa technologii, wspierającej współpracę i wymianę wiedzy.',
+    logo: '/images/logos/itechlaw.jpg',
+    link: 'https://itechlaw.org'
+  },
+  {
+    id: 'piit',
+    name: 'PIIT',
+    role: 'Ekspert',
+    description: 'Ekspert ds. AI Komitetu Przełomowych Technologii Polskiej Izby Informatyki i Telekomunikacji, reprezentującej branżę ICT w Polsce.',
+    logo: '/images/logos/piit.png',
+    link: 'https://piit.org.pl/o-nas/eksperci/michal-jackowski'
+  },
+  {
+    id: 'cen-cenelec',
+    name: 'CEN-CENELEC',
+    role: 'Ekspert',
+    description: 'Członek CEN i CENELEC Joint Technical Committee 21 (JTC 21), Europejski Komitet Normalizacyjny, wkład w rozwój standardów technicznych dla systemów AI w Europie.',
+    logo: '/images/logos/cen-cenelec.svg',
+    link: 'https://www.cencenelec.eu/areas-of-work/cen-cenelec-topics/artificial-intelligence/'
+  },
+  {
+    id: 'pkn',
+    name: 'PKN',
+    role: 'Ekspert',
+    description: 'Członek PKN/KT 338 DS. SZTUCZNEJ INTELIGENCJI, Polski Komitet Normalizacyjny, praca nad krajowymi i międzynarodowymi działaniami normalizacyjnymi w zakresie AI.',
+    logo: '/images/logos/pkn.png',
+    link: 'https://www.pkn.pl/informacje/2024/01/pknkt-338-ds-sztucznej-inteligencji'
+  },
+  {
+    id: 'itcorner',
+    name: 'ITCORNER',
+    role: 'Były członek zarządu',
+    description: 'Były członek zarządu i aktywny członek ITCORNER VOICE. Największa polska organizacja skupiająca polskich founderów firm technologicznych, promująca innowacje i transformację cyfrową w sektorze technologicznym.',
+    logo: '/images/logos/itcorner.png',
+    link: 'https://itcorner.org.pl/o-nas/nasz-zespol/'
+  },
+  {
+    id: 'luminai',
+    name: 'LumiAI',
+    role: 'Rada Programowa',
+    description: 'Członek Rady Programowej LumiAI, organizacji skupionej na edukacji AI i odpowiedzialnym wdrażaniu AI w Polsce.',
+    logo: '/images/logos/luminai.svg',
+    link: 'https://www.luminai.pl/czlonek-rady/prof-michal-jackowski'
+  },
+  {
+    id: 'gracehopper',
+    name: 'GraceHopper Institute',
+    role: 'Rada Nadzorcza',
+    description: 'Członek Rady Nadzorczej GraceHopper Institute, organizacji pozarządowej promującej różnorodność i inkluzję w technologii.',
+    logo: '/images/logos/gracehopper.svg',
+    link: 'https://gracehopperinstitute.org/staff-amp-faculty/michal-jackowski/'
+  },
+  {
+    id: 'quantum',
+    name: 'Europejska Fundacja Quantum Intelligence',
+    role: 'Członek zarządu',
+    description: 'Członek zarządu. Edukacja w zakresie przełomowych technologii i upowszechnianie wiedzy o quantum computing w Polsce.',
+    logo: '/images/logos/quantum.svg',
+    link: null
+  }
+];
+---
+
+<BaseLayout title="Governance - Polityka AI & Standardy | Prof. Michał Jackowski" lang="pl">
+  <Header lang="pl" />
+  <main>
+    <!-- Hero -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Governance</p>
+        <h1 class="text-display text-navy mb-6">Polityka AI & Standardy Międzynarodowe</h1>
+        <p class="text-h2 text-slate max-w-2xl">
+          Kształtowanie governance sztucznej inteligencji poprzez pracę nad polityką, standaryzację i współpracę międzynarodową.
+        </p>
+      </div>
+    </section>
+
+    <!-- Organizations -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="space-y-8">
+          {organizations.map((org) => (
+            <div id={org.id} class="bg-white p-6 md:p-8 rounded-lg border border-gray-200 hover:border-blue transition-colors">
+              <div class="flex flex-col md:flex-row gap-6 items-start">
+                <div class="flex-shrink-0">
+                  <img
+                    src={org.logo}
+                    alt={org.name}
+                    class="h-12 md:h-16 w-auto object-contain"
+                  />
+                </div>
+                <div class="flex-1">
+                  <div class="flex flex-wrap items-center gap-3 mb-2">
+                    <h2 class="text-h1 text-navy">{org.name}</h2>
+                    <span class="text-caption text-blue bg-blue/10 px-2 py-1 rounded font-medium">
+                      {org.role}
+                    </span>
+                  </div>
+                  <p class="text-body text-slate mb-4">
+                    {org.description}
+                  </p>
+                  {org.links ? (
+                    <div class="flex flex-wrap gap-4">
+                      {org.links.map((link: {label: string, url: string}) => (
+                        <a
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center gap-1 text-small text-blue font-medium hover:underline"
+                        >
+                          {link.label} <span>↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  ) : org.link ? (
+                    <a
+                      href={org.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 text-small text-blue font-medium hover:underline"
+                    >
+                      Dowiedz się więcej <span>↗</span>
+                    </a>
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Focus Areas -->
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-8">Obszary działania</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">EU AI Act</h3>
+            <p class="text-body text-slate">
+              Wytyczne wdrożeniowe i ramy zgodności dla przełomowej regulacji AI.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Data Governance</h3>
+            <p class="text-body text-slate">
+              Data Act, Data Governance Act i kompleksowe ramy zarządzania danymi.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Cyberbezpieczeństwo</h3>
+            <p class="text-body text-slate">
+              NIS2, odporność cybernetyczna i ramy bezpieczeństwa dla systemów AI i infrastruktury cyfrowej.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Nadzór ludzki</h3>
+            <p class="text-body text-slate">
+              Ramy dla znaczącej kontroli ludzkiej nad systemami AI i zautomatyzowanym podejmowaniem decyzji.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Modele GPAI</h3>
+            <p class="text-body text-slate">
+              Ramy governance dla modeli AI ogólnego przeznaczenia i dostawców modeli bazowych.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Ochrona danych</h3>
+            <p class="text-body text-slate">
+              Zgodność z RODO, ramy prywatności i ochrona danych w systemach AI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Associations -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4">Stowarzyszenia zawodowe</h2>
+        <p class="text-body text-slate mb-8">Aktywny członek wiodących międzynarodowych organizacji w dziedzinie AI, prawa i governance technologii.</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://www.iaail.org/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-100 text-slate rounded-lg hover:bg-blue hover:text-white transition-colors">International Association of Artificial Intelligence & Law</a>
+          <a href="https://www.worldjurist.org/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-100 text-slate rounded-lg hover:bg-blue hover:text-white transition-colors">World Jurist Association</a>
+          <a href="https://www.icon-society.org/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-100 text-slate rounded-lg hover:bg-blue hover:text-white transition-colors">ICON-S</a>
+          <a href="https://sipe-online.eu/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-100 text-slate rounded-lg hover:bg-blue hover:text-white transition-colors">Societas Iuris Publici Europaei (SIPE)</a>
+          <a href="https://www.giga-net.org/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-100 text-slate rounded-lg hover:bg-blue hover:text-white transition-colors">GigaNet</a>
+          <a href="https://worldtechlegal.com/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-gray-100 text-slate rounded-lg hover:bg-blue hover:text-white transition-colors">World Tech Legal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-20 bg-navy">
+      <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-h1 text-white mb-4">Zainteresowany AI Governance?</h2>
+        <p class="text-body text-gray-300 mb-8">
+          Porozmawiajmy o polityce AI, regulacjach i standaryzacji.
+        </p>
+        <a
+          href="/pl/kontakt"
+          class="inline-block px-8 py-3 bg-white text-navy font-medium rounded hover:bg-gray-100 transition-colors"
+        >
+          Skontaktuj się
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer lang="pl" />
+</BaseLayout>

@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:anylawyer.com)",
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(curl:*)",
+      "WebFetch(domain:itechlaw.org)",
+      "WebFetch(domain:piit.org.pl)",
+      "WebFetch(domain:www.cam.ac.uk)",
+      "WebFetch(domain:global.oup.com)",
+      "WebFetch(domain:www.cencenelec.eu)",
+      "WebFetch(domain:digital-strategy.ec.europa.eu)",
+      "WebFetch(domain:dfranckowiak.pl)",
+      "WebSearch",
+      "WebFetch(domain:dsk-kancelaria.pl)",
+      "Bash(textutil:*)",
+      "WebFetch(domain:www.luminai.pl)",
+      "WebFetch(domain:youtu.be)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(python3:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

@@ -1,0 +1,304 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const popularEpisodes = [
+  {
+    title: 'AI, Hollywood & the Law: Digital Likeness, Creativity and Legal Trust',
+    description: 'Exploring how AI is transforming creative industries, digital likeness rights, and the evolving legal frameworks around AI-generated content.',
+    youtubeUrl: 'https://youtu.be/SaR7_bVyUG0',
+    thumbnail: 'https://img.youtube.com/vi/SaR7_bVyUG0/hqdefault.jpg'
+  },
+  {
+    title: 'Inside Harvey: The Future of Legal AI',
+    description: 'Conversation with Gabe Pereyra about Harvey, one of the leading legal AI platforms, and how it\'s reshaping legal practice.',
+    youtubeUrl: 'https://youtu.be/sXZHWLL4-9A',
+    thumbnail: 'https://img.youtube.com/vi/sXZHWLL4-9A/hqdefault.jpg'
+  },
+  {
+    title: 'Quantum Computing Without Myths',
+    description: 'Deep dive into quantum computing with Sławomir Soszyński - separating reality from marketing hype.',
+    youtubeUrl: 'https://youtu.be/uScW6Ucj9u4',
+    thumbnail: 'https://img.youtube.com/vi/uScW6Ucj9u4/hqdefault.jpg'
+  }
+];
+
+const speakingAgencies = [
+  { name: 'Cyber Security Speakers', url: 'https://cyber-security-speakers.com/speaker/prof-michal-jackowski' },
+  { name: 'AI Speakers Agency', url: 'https://ai-speakers-agency.com/speaker/michal-jackowski' },
+  { name: 'Champions Speakers', url: 'https://champions-speakers.co.uk/speaker-agent/michal-jackowski' }
+];
+
+const mediaAppearances = [
+  { title: 'AI Leadership Through a Lawyer\'s Eyes', outlet: 'Values Podcast', url: 'https://values.pl/podcast/przywodztwo-w-swiecie-ai-okiem-wybitnego-prawnika/' },
+  { title: 'Dzień Dobry TVN Interview', outlet: 'TVN', url: 'https://player.pl/programy-online/dzien-dobry-tvn-odcinki,15232/odcinek-381,S28E381,201407' },
+  { title: 'AI in Legal Practice', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=8wV5lXB85y8' },
+  { title: 'Future of AI Regulation', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=BBxlQxA2FGw' },
+  { title: 'Legal Tech Innovation', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=5jFqdTw7ADc' },
+  { title: 'AI & Law Discussion', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=pxiAFZDGSNY' },
+  { title: 'Technology Regulation', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=JHBaYZ8XIZM' },
+  { title: 'AI Governance Expert Panel', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=q12Z-GHhgLg' }
+];
+
+const conferencesEvents = [
+  { title: 'Pozitive Tech 2025', event: 'Tech Conference', url: 'https://pozitive.tech/prelegenci-zestawien/prof-michal-jackowski/' },
+  { title: 'ICAIL 2025', event: 'International Conference on AI & Law', url: 'https://sites.northwestern.edu/icail2025/agenda/' },
+  { title: 'LegalTech Talk 2025', event: 'International Conference', url: 'https://www.legaltech-talk.com/agenda-2025/' },
+  { title: 'Rzeszów AI Summit 2025', event: 'AI for Law, Science & Society', url: 'https://www.ur.edu.pl/pl/konferencje/rzeszow-ai-summit-2025-next-generation-artificial-intelligence-for-law-science-innovation-and-society/prelegenci' },
+  { title: 'FutureLaw 2024', event: 'Estonia', url: 'https://futurelaw.ee/futurelaw-2024/' },
+  { title: 'World Technology Law Conference 2024', event: 'ITechLaw', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-world-technology-law-conference-2024/' },
+  { title: 'ML in PL Conference 2024', event: 'Machine Learning', url: 'https://conference2024.mlinpl.org' },
+  { title: 'Upgrade 2024', event: 'Business Conference', url: 'https://letsupgrade.pl/upgrade2024' },
+  { title: 'ILC Conference', event: 'Legal Innovation', url: 'https://konferencja.ilc.com.pl' },
+  { title: 'InfoShare', event: 'Tech Conference', url: 'https://infoshare.pl/speakers-list/michal-jackowski-o1744g628c48-one.html' },
+  { title: 'Open Forum AI', event: 'Poland', url: 'https://otwarteforumai.pl' },
+  { title: 'JURIX 2023', event: 'Legal Knowledge Systems', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-jurix-2023-conference/' },
+  { title: 'ICAIL 2023', event: 'AI & Law', url: 'https://dsk-kancelaria.pl/blog/michal-jackowski-na-konferencji-icail-2023/' },
+  { title: 'IDC CIO Summit', event: 'Sopot', url: 'https://dsk-kancelaria.pl/blog/michal-jackowski-na-idc-cio-summit-w-sopocie/' },
+  { title: 'Upgrade 2023', event: 'Business Conference', url: 'https://letsupgrade.pl/upgrade23' },
+  { title: 'LPM Conference 2022', event: 'Legal Project Management', url: 'https://lpm-conference-2022.syskonf.pl' }
+];
+
+const popularArticles = [
+  { title: 'With AI, You\'ll Become a Chemist and a Lawyer', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/rzecz-o-prawie/art41430351-michal-jackowski-michal-araszkiewicz-z-ai-zostaniesz-chemikiem-i-prawnikiem' },
+  { title: 'What Lawyers Dream About Technologically', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/rzecz-o-prawie/art40662471-michal-raczkowski-michal-araszkiewicz-o-czym-marza-technologicznie-prawnicy' },
+  { title: 'Polish Lawyers Far Behind Global Trends', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/rzecz-o-prawie/art40464061-michal-jackowski-michal-araszkiewicz-polski-prawnik-daleko-za-swiatowymi' },
+  { title: 'AI in Legal Practice: Poland Behind World Trends', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/opinie-prawne/art40296431-sztuczna-inteligencja-w-praktyce-prawa-polska-daleko-za-swiatowymi-trendami' },
+  { title: 'Artificial Intelligence Made in Poland', outlet: 'Gazeta Wyborcza', url: 'https://wyborcza.biz/biznes/7,177150,26997427,sztuczna-inteligencja-made-in-poland-z-cytatami-z-jana-pawla.html' }
+];
+---
+
+<BaseLayout title="Media - Podcast & Press | Prof. Michał Jackowski" lang="en">
+  <Header lang="en" />
+  <main>
+    <!-- Hero -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Media</p>
+        <h1 class="text-display text-navy mb-6">Podcast & Public Presence</h1>
+        <p class="text-h2 text-slate max-w-2xl">
+          Sharing insights on AI law, technology regulation, and the future of legal practice through the Monday Bagel podcast and media appearances.
+        </p>
+      </div>
+    </section>
+
+    <!-- Monday Bagel Podcast -->
+    <section id="podcast" class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="bg-navy rounded-2xl p-8 md:p-12 text-white mb-12">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div class="text-5xl mb-4">🥯</div>
+              <h2 class="text-h1 text-white mb-4">Monday Bagel</h2>
+              <p class="text-body text-gray-300 mb-6">
+                A weekly podcast exploring the intersection of law, technology, and artificial intelligence.
+                Each episode delivers insights you can digest with your Monday morning coffee (or bagel).
+              </p>
+              <p class="text-body text-gray-300 mb-8">
+                From regulatory deep dives to conversations with industry leaders, Monday Bagel makes
+                complex AI law topics accessible and actionable.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="https://www.youtube.com/@mjackowski/videos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block px-6 py-3 bg-white text-navy font-medium rounded hover:bg-gray-100 transition-colors"
+                >
+                  Browse episodes
+                </a>
+                <a
+                  href="https://www.youtube.com/@mjackowski"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block px-6 py-3 border border-white text-white font-medium rounded hover:bg-white/10 transition-colors"
+                >
+                  Subscribe
+                </a>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="inline-block bg-white/10 rounded-xl p-8">
+                <p class="text-6xl font-bold mb-2">70+</p>
+                <p class="text-small text-gray-300">Episodes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Most Popular Episodes -->
+        <h3 id="episodes" class="text-h1 text-navy mb-6">Most Popular Episodes</h3>
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          {popularEpisodes.map((episode) => (
+            <a
+              href={episode.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-white rounded-lg border border-gray-200 overflow-hidden hover:border-blue transition-colors"
+            >
+              <div class="aspect-video bg-gray-100 overflow-hidden">
+                <img
+                  src={episode.thumbnail}
+                  alt={episode.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="text-h2 text-navy mb-2 group-hover:text-blue transition-colors">{episode.title}</h4>
+                <p class="text-small text-slate">{episode.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Media Appearances -->
+    <section id="media-appearances" class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4">Media Appearances</h2>
+        <p class="text-body text-slate mb-8 max-w-2xl">
+          Featured in leading publications and media discussing AI regulation, legal technology, and the future of the legal profession.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {mediaAppearances.map((item) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
+            >
+              <p class="text-caption text-blue mb-1">{item.outlet}</p>
+              <p class="text-body text-navy font-medium">{item.title}</p>
+            </a>
+          ))}
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-caption text-slate mb-2">Media Inquiries</p>
+            <h3 class="text-h2 text-navy mb-4">Available for Comment</h3>
+            <p class="text-body text-slate mb-4">
+              I regularly provide expert commentary on AI law, technology regulation, and legal innovation for journalists and media outlets.
+            </p>
+            <a
+              href="/en/contact"
+              class="text-small text-blue font-medium hover:underline"
+            >
+              Contact for media inquiries →
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <p class="text-caption text-slate mb-2">Speaking</p>
+            <h3 class="text-h2 text-navy mb-4">Conference & Event Speaker</h3>
+            <p class="text-body text-slate mb-4">
+              Available for keynotes, panel discussions, and workshops on AI governance, legal tech, and technology regulation.
+            </p>
+            <a
+              href="/en/contact#speaking"
+              class="text-small text-blue font-medium hover:underline"
+            >
+              Invite to speak →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conferences & Events -->
+    <section id="conferences" class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4">Conferences & Events</h2>
+        <p class="text-body text-slate mb-8 max-w-2xl">
+          Speaking at leading international conferences on AI law, legal technology, and digital governance.
+        </p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {conferencesEvents.map((item) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
+            >
+              <p class="text-body text-navy font-medium mb-1">{item.title}</p>
+              <p class="text-caption text-slate">{item.event}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Articles -->
+    <section id="articles" class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4">Popular Articles</h2>
+        <p class="text-body text-slate mb-8 max-w-2xl">
+          Commentary and analysis on AI in legal practice, published in leading media outlets.
+        </p>
+
+        <div class="space-y-4">
+          {popularArticles.map((item) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
+            >
+              <div class="flex justify-between items-center">
+                <div>
+                  <p class="text-body text-navy font-medium">{item.title}</p>
+                  <p class="text-caption text-slate">{item.outlet}</p>
+                </div>
+                <span class="text-blue">↗</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Speaking Contact -->
+    <section id="speaking" class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4">Speaking Agencies</h2>
+        <p class="text-body text-slate mb-8">
+          Book speaking engagements through these agencies.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+          {speakingAgencies.map((agency) => (
+            <a
+              href={agency.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue transition-colors text-center"
+            >
+              <p class="text-h2 text-navy hover:text-blue transition-colors">{agency.name}</p>
+              <p class="text-small text-blue mt-2">View profile ↗</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-20 bg-navy">
+      <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-h1 text-white mb-4">Media Inquiry?</h2>
+        <p class="text-body text-gray-300 mb-8">
+          Available for interviews, expert commentary, and speaking engagements.
+        </p>
+        <a
+          href="/en/contact"
+          class="inline-block px-8 py-3 bg-white text-navy font-medium rounded hover:bg-gray-100 transition-colors"
+        >
+          Get in touch
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

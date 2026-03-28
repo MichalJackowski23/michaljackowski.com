@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'en' | 'pl';
+}
+
+const {
+  title,
+  description = "Prof. Michał Jackowski - Legal Scholar, AI Governance Expert, Attorney at Law",
+  lang = 'en'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+  </head>
+  <body class="font-sans text-navy bg-white antialiased">
+    <slot />
+  </body>
+</html>

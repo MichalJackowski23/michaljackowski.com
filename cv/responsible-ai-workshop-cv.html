@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Michał Jackowski - CV | Responsible AI Workshop</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1a2b4a;
+      background: white;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      padding: 15mm 20mm;
+      margin: 0 auto 20px auto;
+      background: white;
+      overflow: hidden;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      body {
+        background: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page {
+        width: 210mm;
+        height: 297mm;
+        padding: 15mm 20mm;
+        margin: 0;
+        page-break-after: always;
+        page-break-inside: avoid;
+        overflow: hidden;
+        box-shadow: none;
+      }
+      .page:last-child { page-break-after: auto; }
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #1a2b4a;
+    }
+
+    .photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid #1a2b4a;
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #1a2b4a;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 11pt;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      font-size: 10pt;
+      color: #64748b;
+      max-width: 500px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+      font-size: 9pt;
+      color: #64748b;
+    }
+
+    .contact-row a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #1a2b4a;
+      margin-bottom: 12px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #e2e8f0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Summary box */
+    .summary-box {
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      border-left: 4px solid #2563eb;
+      margin-bottom: 20px;
+    }
+
+    .summary-box p {
+      font-size: 10pt;
+      line-height: 1.6;
+    }
+
+    /* Grid layouts */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    /* Cards */
+    .card {
+      padding: 12px;
+      background: #f8fafc;
+      border-radius: 6px;
+    }
+
+    .card-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1a2b4a;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 9pt;
+      color: #2563eb;
+      margin-bottom: 6px;
+    }
+
+    .card-text {
+      font-size: 9pt;
+      color: #64748b;
+    }
+
+    /* Experience items */
+    .experience-item {
+      margin-bottom: 14px;
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .experience-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1a2b4a;
+    }
+
+    .experience-date {
+      font-size: 9pt;
+      color: #64748b;
+    }
+
+    .experience-org {
+      font-size: 9pt;
+      color: #2563eb;
+      margin-bottom: 4px;
+    }
+
+    .experience-desc {
+      font-size: 9pt;
+      color: #64748b;
+    }
+
+    /* Lists */
+    ul {
+      padding-left: 16px;
+    }
+
+    li {
+      font-size: 9pt;
+      margin-bottom: 4px;
+      color: #64748b;
+    }
+
+    li strong {
+      color: #1a2b4a;
+    }
+
+    /* Highlight boxes */
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      text-align: center;
+      padding: 12px 8px;
+      background: #1a2b4a;
+      border-radius: 6px;
+    }
+
+    .highlight-number {
+      font-size: 18pt;
+      font-weight: 700;
+      color: white;
+    }
+
+    .highlight-label {
+      font-size: 8pt;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* Logo strip */
+    .logo-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: #f8fafc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .logo-strip span {
+      font-size: 9pt;
+      color: #64748b;
+      padding: 4px 10px;
+      background: white;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Page 2+ header */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .page-header-name {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1a2b4a;
+    }
+
+    .page-header-page {
+      font-size: 9pt;
+      color: #64748b;
+    }
+
+    /* Workshop relevance */
+    .relevance-box {
+      background: linear-gradient(135deg, #1a2b4a 0%, #2563eb 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .relevance-title {
+      font-size: 11pt;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .relevance-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .relevance-list li {
+      color: white;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .relevance-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #86efac;
+    }
+
+    .relevance-box li strong {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <header class="header">
+    <img src="/Users/michaljackowski/Claude/michaljackowski/public/images/michal-jackowski.jpg" alt="Prof. Michał Jackowski" class="photo">
+    <div class="header-content">
+      <h1 class="name">Prof. Michał Jackowski</h1>
+      <p class="title">AI Governance Expert · Legal Scholar · Attorney at Law</p>
+      <p class="tagline">Shaping the governance of artificial intelligence at the intersection of EU policy, academic research, and legal practice.</p>
+      <div class="contact-row">
+        <span>Poznań, Poland</span>
+        <a href="mailto:m.jackowski@dsk-kancelaria.pl">m.jackowski@dsk-kancelaria.pl</a>
+        <span>+48 504 139 644</span>
+        <a href="https://www.linkedin.com/in/michal-jackowski-prof/">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-box">
+    <p><strong>Prof. Michał Jackowski</strong> is a leading European expert on AI governance, combining academic research at the University of Cambridge with practical advisory experience at the EU AI Office. As a partner at a 100+ person law firm and co-founder of a LegalTech startup, he brings unique insights into responsible AI implementation for enterprise leadership. He has advised organizations across finance, technology, and public sectors on AI strategy, regulatory compliance, and governance frameworks.</p>
+  </div>
+
+  <div class="highlight-grid">
+    <div class="highlight-box">
+      <div class="highlight-number">EU</div>
+      <div class="highlight-label">AI Office Advisor</div>
+    </div>
+    <div class="highlight-box">
+      <div class="highlight-number">60+</div>
+      <div class="highlight-label">Countries Reached</div>
+    </div>
+    <div class="highlight-box">
+      <div class="highlight-number">100+</div>
+      <div class="highlight-label">Speaking Events</div>
+    </div>
+    <div class="highlight-box">
+      <div class="highlight-number">5</div>
+      <div class="highlight-label">Languages</div>
+    </div>
+  </div>
+
+  <div class="relevance-box">
+    <div class="relevance-title">Why Prof. Jackowski for Your Responsible AI Workshop</div>
+    <ul class="relevance-list">
+      <li>Direct involvement in EU AI Act implementation — insider knowledge of regulatory requirements</li>
+      <li>Practical experience advising C-suite executives on AI governance and compliance strategies</li>
+      <li>Author of the largest global study on AI adoption in professional services</li>
+      <li>Unique combination of legal expertise, policy access, and business acumen</li>
+      <li>Experienced workshop facilitator for executive audiences</li>
+    </ul>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">Current Positions & Affiliations</h2>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Advisor — EU AI Office</span>
+        <span class="experience-date">2024 – Present</span>
+      </div>
+      <div class="experience-org">European Commission, Brussels</div>
+      <div class="experience-desc">Contributing to the development of the Code of Practice for General-Purpose AI models under the EU AI Act. Advising on implementation frameworks, human oversight requirements, and governance mechanisms.</div>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Visiting Scholar — Faculty of Law</span>
+        <span class="experience-date">2024 – Present</span>
+      </div>
+      <div class="experience-org">University of Cambridge</div>
+      <div class="experience-desc">Research on AI governance, constitutional safeguards for automated decision-making, and human oversight in high-risk AI systems.</div>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Partner</span>
+        <span class="experience-date">2015 – Present</span>
+      </div>
+      <div class="experience-org">DSK Kancelaria (DSK Depa Szmit Kuźmiak Jackowski) — 100+ professionals</div>
+      <div class="experience-desc">Leading technology law practice. Advising technology companies, financial institutions, and enterprises on AI regulation, GDPR, DORA, and digital compliance. Implementing AI solutions in legal workflows.</div>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Co-Founder</span>
+        <span class="experience-date">2025 – Present</span>
+      </div>
+      <div class="experience-org">AnyLawyer — LegalTech Platform</div>
+      <div class="experience-desc">Building AI-powered legal technology platform. First-hand experience with responsible AI development and deployment in regulated industries.</div>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-header-name">Prof. Michał Jackowski — CV</span>
+    <span class="page-header-page">Page 2 of 3</span>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">Governance & Standards Bodies</h2>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">GRAI — AI Working Group</div>
+        <div class="card-subtitle">Ministry of Digital Affairs, Poland</div>
+        <div class="card-text">Leader of a working group supporting Polish government in AI. Shaping Poland's national AI strategy.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">CEN-CENELEC</div>
+        <div class="card-subtitle">European Standardization</div>
+        <div class="card-text">Expert contributor to AI standardization initiatives supporting EU AI Act compliance.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">ITechLaw Association</div>
+        <div class="card-subtitle">Legal Technology Committee — Co-Chair</div>
+        <div class="card-text">Co-Chair of Legal Tech Committee of one of the biggest IP and tech legal societies globally.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">PKN</div>
+        <div class="card-subtitle">Polish Committee for Standardization</div>
+        <div class="card-text">Expert on AI standardization, working on national and international standards.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Key Publications & Research</h2>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Global Report on the State of AI in Legal Practice</span>
+        <span class="experience-date">2024 & 2025</span>
+      </div>
+      <div class="experience-org">Co-Editor & Co-Author — In cooperation with CCBE, FBI, AIJA, World Jurists Association, ITechLaw</div>
+      <div class="experience-desc">The largest international empirical study examining AI adoption in legal practice. Survey of law firms across 60+ jurisdictions analyzing patterns, barriers, and future outlook for AI in professional services. <strong>2nd Edition launching April 2026.</strong></div>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Oxford University Press — Legal Tech & AI Series</span>
+        <span class="experience-date">Ongoing</span>
+      </div>
+      <div class="experience-org">Co-Editor, OUP Essentials</div>
+      <div class="experience-desc">Editorial leadership of academic series on AI and technology law, publishing rigorous analysis of complex legal and governance issues.</div>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Human Oversight as Constitutional Safeguard in AI Governance</span>
+        <span class="experience-date">2026</span>
+      </div>
+      <div class="experience-org">ICON•S Annual Conference, Dublin — Forthcoming Presentation</div>
+      <div class="experience-desc">Research on constitutional frameworks for meaningful human control over AI systems in automated decision-making contexts.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Workshop & Speaking Experience</h2>
+
+    <p style="font-size: 9pt; color: #64748b; margin-bottom: 12px;">Extensive experience delivering executive education and workshops on AI governance, responsible AI, and regulatory compliance. Selected engagements:</p>
+
+    <ul>
+      <li><strong>Executive AI Governance Workshops</strong> — Delivered to boards and C-suite teams across financial services, technology, and healthcare sectors</li>
+      <li><strong>EU AI Act Implementation Masterclasses</strong> — Practical guidance for compliance officers and legal teams</li>
+      <li><strong>Responsible AI Strategy Sessions</strong> — Facilitated discussions on AI ethics, risk management, and governance frameworks</li>
+      <li><strong>International Conference Keynotes</strong> — Regular speaker at major legal tech and AI governance conferences across Europe and globally</li>
+      <li><strong>Corporate Training Programs</strong> — Designed and delivered AI literacy programs for non-technical executives</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Areas of Expertise</h2>
+
+    <div class="three-col">
+      <div class="card">
+        <div class="card-title">AI Governance</div>
+        <div class="card-text">EU AI Act, risk-based regulation, compliance frameworks, institutional design</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Human Oversight</div>
+        <div class="card-text">Meaningful human control, automated decision-making, constitutional safeguards</div>
+      </div>
+      <div class="card">
+        <div class="card-title">GPAI Systems</div>
+        <div class="card-text">General-purpose AI regulation, foundation models, Code of Practice</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Legal Tech</div>
+        <div class="card-text">AI adoption in legal practice, workflow transformation, professional services</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Data Governance</div>
+        <div class="card-text">GDPR, DORA, data protection, privacy frameworks</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Risk Management</div>
+        <div class="card-text">AI risk classification, conformity assessment, audit frameworks</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="page-header">
+    <span class="page-header-name">Prof. Michał Jackowski — CV</span>
+    <span class="page-header-page">Page 3 of 3</span>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">Media & Public Engagement</h2>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Monday Bagel Podcast</span>
+        <span class="experience-date">60+ Episodes</span>
+      </div>
+      <div class="experience-org">Host — International Podcast on Law, Technology & AI</div>
+      <div class="experience-desc">Weekly podcast reaching tens of thousands of listeners globally. Conversations with leading scholars, policymakers, and innovators on AI governance, digital transformation, and the future of professional services.</div>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-header">
+        <span class="experience-title">Media Commentary</span>
+        <span class="experience-date">Ongoing</span>
+      </div>
+      <div class="experience-desc">Regular expert commentary on AI regulation, legal technology, and digital policy for international legal and technology media outlets. Sought-after voice on EU AI Act implementation and responsible AI deployment.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Education & Professional Qualifications</h2>
+
+    <div class="two-col">
+      <div>
+        <div class="experience-item">
+          <div class="experience-title">Professor of Law</div>
+          <div class="experience-org">Habilitation in Law</div>
+          <div class="experience-desc">Specialization in AI & Law, Legal Technology, Digital Regulation</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">Attorney at Law</div>
+          <div class="experience-org">Licensed Legal Practitioner, Poland</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="experience-item">
+          <div class="experience-title">Executive MBA</div>
+          <div class="experience-org">ESCP Europe Business School</div>
+          <div class="experience-desc">Top European Business School</div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-title">Academic Programme Leadership</div>
+          <div class="experience-org">AI & Law Postgraduate Programme</div>
+          <div class="experience-desc">Akademia Leona Koźmińskiego — one of Central Europe's leading practice-oriented AI & law educational initiatives</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Languages</h2>
+    <p style="font-size: 10pt;"><strong>Polish</strong> (native) · <strong>English</strong> (fluent) · <strong>German</strong> (professional) · <strong>Russian</strong> (conversational) · <strong>Chinese</strong> (basic)</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Affiliations</h2>
+    <div class="logo-strip">
+      <span>University of Cambridge</span>
+      <span>EU AI Office</span>
+      <span>CEN-CENELEC</span>
+      <span>ITechLaw</span>
+      <span>GRAI / Ministry of Digital Affairs</span>
+      <span>PKN</span>
+      <span>PIIT</span>
+      <span>ITCORNER</span>
+      <span>Oxford University Press</span>
+      <span>DSK Kancelaria</span>
+      <span>AnyLawyer</span>
+    </div>
+  </section>
+
+  <div class="relevance-box" style="margin-top: 20px;">
+    <div class="relevance-title">Proposed Workshop: Responsible AI for Portfolio Company CEOs</div>
+    <p style="font-size: 9pt; margin-bottom: 10px;">A tailored executive workshop combining regulatory insight, practical implementation guidance, and strategic decision-making frameworks.</p>
+    <ul class="relevance-list">
+      <li><strong>EU AI Act Essentials</strong> — What CEOs need to know about the new regulatory landscape</li>
+      <li><strong>Risk Assessment Framework</strong> — Identifying and classifying AI risks in your organization</li>
+      <li><strong>Governance Architecture</strong> — Building responsible AI oversight structures</li>
+      <li><strong>Implementation Roadmap</strong> — From compliance to competitive advantage</li>
+      <li><strong>Interactive Case Studies</strong> — Real-world scenarios tailored to portfolio company contexts</li>
+    </ul>
+  </div>
+
+  <div style="text-align: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid #e2e8f0;">
+    <p style="font-size: 9pt; color: #64748b;">
+      <strong>Prof. Michał Jackowski</strong> · LinkedIn: /in/michal-jackowski-prof/
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

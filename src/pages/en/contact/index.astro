@@ -1,0 +1,241 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Contact | Prof. Michał Jackowski" lang="en">
+  <Header lang="en" />
+  <main>
+    <!-- Hero -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Contact</p>
+        <h1 class="text-display text-navy mb-6">Get in Touch</h1>
+        <p class="text-h2 text-slate max-w-2xl">
+          Available for legal advisory, speaking engagements, media inquiries, and academic collaboration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Direct Contact -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+          <!-- Email -->
+          <div class="bg-navy p-6 rounded-lg text-center">
+            <div class="text-3xl mb-4">✉️</div>
+            <h2 class="text-h2 text-white mb-2">Email</h2>
+            <a
+              href="mailto:m.jackowski@dsk-kancelaria.pl"
+              class="text-body text-gray-300 hover:text-white transition-colors"
+            >
+              m.jackowski@dsk-kancelaria.pl
+            </a>
+          </div>
+
+          <!-- Phone -->
+          <div class="bg-navy p-6 rounded-lg text-center">
+            <div class="text-3xl mb-4">📞</div>
+            <h2 class="text-h2 text-white mb-2">Phone</h2>
+            <a
+              href="tel:+48504139644"
+              class="text-body text-gray-300 hover:text-white transition-colors"
+            >
+              +48 504 139 644
+            </a>
+          </div>
+
+          <!-- Calendar -->
+          <div class="bg-navy p-6 rounded-lg text-center">
+            <div class="text-3xl mb-4">📅</div>
+            <h2 class="text-h2 text-white mb-2">Schedule a Call</h2>
+            <a
+              href="https://calendar.app.google/HhMAL6Nedi2skE3W8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-body text-gray-300 hover:text-white transition-colors"
+            >
+              Book a meeting <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Legal Advisory -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">⚖️</div>
+            <h2 class="text-h2 text-navy mb-2">Legal Advisory</h2>
+            <p class="text-body text-slate mb-4">
+              AI regulation, compliance, and technology law matters through DSK Kancelaria.
+            </p>
+            <a
+              href="https://dsk-kancelaria.pl/zespol/michal-jackowski/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-small text-blue font-medium hover:underline"
+            >
+              Contact via DSK <span>↗</span>
+            </a>
+          </div>
+
+          <!-- Speaking -->
+          <div id="speaking" class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">🎤</div>
+            <h2 class="text-h2 text-navy mb-2">Speaking Engagements</h2>
+            <p class="text-body text-slate mb-4">
+              Keynotes, panels, and workshops on AI governance, legal tech, and technology regulation.
+            </p>
+            <p class="text-small text-slate">
+              Topics include: EU AI Act, AI governance frameworks, legal technology trends, human oversight in AI, data protection, data governance, cybersecurity.
+            </p>
+          </div>
+
+          <!-- Media -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">📺</div>
+            <h2 class="text-h2 text-navy mb-2">Media Inquiries</h2>
+            <p class="text-body text-slate mb-4">
+              Available for interviews, expert commentary, and press inquiries on AI law and technology regulation.
+            </p>
+            <p class="text-small text-slate">
+              Regular contributor to legal and technology media.
+            </p>
+          </div>
+
+          <!-- Academic -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">🎓</div>
+            <h2 class="text-h2 text-navy mb-2">Academic Collaboration</h2>
+            <p class="text-body text-slate mb-4">
+              Research partnerships, joint publications, and academic exchanges on AI governance.
+            </p>
+            <p class="text-small text-slate">
+              Currently affiliated with SWPS University, ALK University, and University of Cambridge as visiting scholar.
+            </p>
+          </div>
+
+          <!-- Podcast -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">🎙️</div>
+            <h2 class="text-h2 text-navy mb-2">Podcast Guests</h2>
+            <p class="text-body text-slate mb-4">
+              Interested in being a guest on Monday Bagel? I welcome experts in AI, law, and technology.
+            </p>
+            <a
+              href="/en/media#podcast"
+              class="text-small text-blue font-medium hover:underline"
+            >
+              Learn about the podcast →
+            </a>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">💼</div>
+            <h2 class="text-h2 text-navy mb-2">Connect</h2>
+            <p class="text-body text-slate mb-4">
+              Follow for updates on AI governance, legal tech insights, and professional activities.
+            </p>
+            <a
+              href="https://linkedin.com/in/michaljackowski"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 text-small text-blue font-medium hover:underline"
+            >
+              LinkedIn <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-2xl mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4 text-center">Send a Message</h2>
+        <p class="text-body text-slate mb-8 text-center">
+          Fill out the form below and I'll get back to you as soon as possible.
+        </p>
+
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block text-small text-navy font-medium mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors"
+                placeholder="Your name"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-small text-navy font-medium mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors"
+                placeholder="your@email.com"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-small text-navy font-medium mb-2">Subject</label>
+            <select
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors bg-white"
+            >
+              <option value="">Select a topic</option>
+              <option value="legal">Legal Advisory</option>
+              <option value="speaking">Speaking Engagement</option>
+              <option value="media">Media Inquiry</option>
+              <option value="academic">Academic Collaboration</option>
+              <option value="podcast">Podcast Guest</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-small text-navy font-medium mb-2">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-blue focus:ring-1 focus:ring-blue outline-none transition-colors resize-none"
+              placeholder="Your message..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="inline-block px-8 py-3 bg-blue text-white font-medium rounded hover:bg-blue-light transition-colors"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+        <p class="text-small text-slate uppercase tracking-wide mb-2">Based in</p>
+        <p class="text-h1 text-navy">Poznań, Poland</p>
+        <p class="text-body text-slate mt-4">
+          Available for in-person meetings in Poland and across Europe, as well as virtual consultations worldwide.
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

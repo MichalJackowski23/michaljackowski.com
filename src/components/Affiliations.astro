@@ -1,0 +1,59 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const content = {
+  en: {
+    title: 'Affiliations'
+  },
+  pl: {
+    title: 'Afiliacje'
+  }
+};
+
+const t = content[lang];
+
+// Affiliations with updated links
+const affiliations = [
+  { name: 'Cambridge', logo: '/images/logos/cambridge.svg', href: 'https://www.law.cam.ac.uk' },
+  { name: 'EU AI Office', logo: '/images/logos/eu-ai-office.svg', href: 'https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai' },
+  { name: 'DSK', logo: '/images/logos/dsk.png', href: 'https://dsk-kancelaria.pl/zespol/michal-jackowski/' },
+  { name: 'GRAI', logo: '/images/logos/grai.png', href: 'https://ai.gov.pl/grupa-robocza-ai/wspolpraca-miedzynarodowa' },
+  { name: 'PIIT', logo: '/images/logos/piit.png', href: 'https://piit.org.pl/o-nas/eksperci/michal-jackowski' },
+  { name: 'CEN-CENELEC', logo: '/images/logos/cen-cenelec.svg', href: 'https://www.cencenelec.eu/areas-of-work/cen-cenelec-topics/artificial-intelligence/' },
+  { name: 'ITCORNER', logo: '/images/logos/itcorner.png', href: 'https://itcorner.org.pl/o-nas/nasz-zespol/' },
+  { name: 'PKN', logo: '/images/logos/pkn.png', href: 'https://www.pkn.pl/informacje/2024/01/pknkt-338-ds-sztucznej-inteligencji' },
+  { name: 'ITechLaw', logo: '/images/logos/itechlaw.jpg', href: 'https://itechlaw.org' },
+  { name: 'OUP', logo: '/images/logos/oup.png', href: 'https://global.oup.com' },
+  { name: 'AnyLawyer', logo: '/images/logos/anylawyer.svg', href: 'https://anylawyer.com' }
+];
+---
+
+<section class="py-12 md:py-16 bg-gray-50">
+  <div class="max-w-content mx-auto px-6 lg:px-12">
+    <h3 class="text-center text-small text-slate uppercase tracking-wide mb-8">
+      {t.title}
+    </h3>
+
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+      {affiliations.map((affiliation) => (
+        <a
+          href={affiliation.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all"
+          title={affiliation.name}
+        >
+          <img
+            src={affiliation.logo}
+            alt={affiliation.name}
+            class="h-8 md:h-10 w-auto object-contain"
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

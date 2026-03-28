@@ -1,0 +1,452 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Academia - Research & Publications | Prof. Michał Jackowski" lang="en">
+  <Header lang="en" />
+  <main>
+    <!-- Hero -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Academia</p>
+        <h1 class="text-display text-navy mb-6">Research, Publications & Education</h1>
+        <p class="text-h2 text-slate max-w-2xl">
+          Advancing the understanding of AI law through academic research, international publications, and teaching the next generation of lawyers.
+        </p>
+      </div>
+    </section>
+
+    <!-- SWPS - Primary Affiliation -->
+    <section id="swps" class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Primary Affiliation</p>
+            <h2 class="text-h1 text-navy mb-4">SWPS University</h2>
+            <p class="text-body text-slate mb-6">
+              Professor of Law at the Faculty of Law in Poznań, SWPS University. Teaching and researching
+              at the intersection of AI, law, and technology regulation.
+            </p>
+            <p class="text-body text-slate mb-6">
+              Leading academic programmes on artificial intelligence law, data governance,
+              and digital transformation in the legal profession.
+            </p>
+          </div>
+
+          <div class="bg-gray-100 rounded-lg p-8 md:p-12 text-center">
+            <div class="text-6xl mb-4">🎓</div>
+            <p class="text-h2 text-navy mb-2">Professor of Law</p>
+            <p class="text-small text-slate">
+              Faculty of Law, Poznań
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cambridge -->
+    <section id="cambridge" class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="/images/logos/cambridge.svg"
+              alt="University of Cambridge"
+              class="h-16 mb-6"
+            />
+            <h2 class="text-h1 text-navy mb-4">University of Cambridge</h2>
+            <p class="text-body text-slate mb-6">
+              As a Visiting Scholar at the Faculty of Law, University of Cambridge, I conduct research
+              on AI governance, focusing on constitutional safeguards and human oversight in AI systems.
+            </p>
+
+            <a
+              href="https://www.law.cam.ac.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-blue text-white font-medium rounded hover:bg-blue-light transition-colors"
+            >
+              Cambridge Faculty of Law
+              <span>↗</span>
+            </a>
+          </div>
+
+          <div class="bg-white rounded-lg p-8 md:p-12 text-center border border-gray-200">
+            <div class="text-6xl mb-4">🏛️</div>
+            <p class="text-h2 text-navy mb-2">Visiting Scholar</p>
+            <p class="text-small text-slate">
+              Faculty of Law
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALK & CLAIRE -->
+    <section id="affiliations" class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-8">Academic Affiliations</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Akademia Leona Koźmińskiego</h3>
+            <p class="text-small text-blue mb-4">Lecturer — AI & Law Postgraduate Programme</p>
+            <p class="text-body text-slate mb-4">
+              Teaching on the postgraduate programme in AI Law, one of Central Europe's leading
+              practice-oriented educational initiatives in AI & law.
+            </p>
+            <a
+              href="https://www.kozminski.edu.pl/pl/oferta-edukacyjna/studia-podyplomowe/prawo-sztucznej-inteligencji"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-small text-blue font-medium hover:underline"
+            >
+              View programme →
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">CLAIRE — Centre for LegalTech and AI Research</h3>
+            <p class="text-small text-blue mb-4">Member of Scientific Council</p>
+            <p class="text-body text-slate mb-4">
+              Member of the Scientific Council of CLAIRE (Centrum Badań nad LegalTech i AI)
+              at the University of Łódź, advancing research in legal technology and AI.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Report -->
+    <section id="global-report" class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1 bg-white rounded-lg p-8 md:p-12 border border-gray-200">
+            <div class="text-5xl mb-4">📊</div>
+            <h3 class="text-h2 text-navy mb-4">Key Findings</h3>
+            <ul class="space-y-3 text-body text-slate">
+              <li class="flex items-start gap-2">
+                <span class="text-blue">→</span>
+                First international empirical study on AI in legal practice
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue">→</span>
+                Survey of law firms across multiple jurisdictions
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue">→</span>
+                Analysis of AI adoption patterns and barriers
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue">→</span>
+                Recommendations for legal profession
+              </li>
+            </ul>
+          </div>
+
+          <div class="order-1 md:order-2">
+            <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Featured Publication</p>
+            <h2 class="text-h1 text-navy mb-4">Global Report on AI in Legal Practice</h2>
+            <p class="text-body text-slate mb-6">
+              The largest international empirical study examining how law firms around the world
+              are adopting artificial intelligence. Survey of law firms across 60+ jurisdictions
+              analyzing patterns, barriers, and future outlook for AI in professional services.
+            </p>
+            <p class="text-body text-slate mb-4">
+              Published in collaboration with CCBE, FBI, AIJA, World Jurists Association, and ITechLaw.
+            </p>
+            <p class="text-body text-navy font-medium mb-8">
+              📢 2nd Edition launching soon — with 2025 research data comparing results with the first report.
+            </p>
+
+            <a
+              href="https://globalailawreport.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-blue text-white font-medium rounded hover:bg-blue-light transition-colors"
+            >
+              Read the Report
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-8">Publications</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <!-- OUP -->
+          <div id="oup" class="bg-white p-6 rounded-lg border border-gray-200">
+            <img
+              src="/images/logos/oup.png"
+              alt="Oxford University Press"
+              class="h-10 mb-4"
+            />
+            <h3 class="text-h2 text-navy mb-2">Oxford University Press</h3>
+            <p class="text-small text-blue mb-2">Editor-in-Chief — OUP Essentials Series</p>
+            <p class="text-body text-slate mb-4">
+              Editor-in-Chief of OUP Essentials series on legal tech and AI,
+              providing accessible yet rigorous analysis of complex legal issues.
+            </p>
+          </div>
+
+          <!-- Other Publications -->
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <div class="text-3xl mb-4">📚</div>
+            <h3 class="text-h2 text-navy mb-2">70+ Publications</h3>
+            <p class="text-body text-slate mb-4">
+              Author of monographs, book chapters, and journal articles on constitutional law,
+              AI governance, data protection, and technology regulation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Forthcoming -->
+        <h3 class="text-h2 text-navy mb-4">Forthcoming</h3>
+        <div class="bg-blue/5 p-6 rounded-lg mb-8">
+          <ul class="space-y-3 text-body text-slate">
+            <li>• "Human Oversight as a Constitutional Safeguard in AI Governance: Convergence or Parallel Evolution?" — ICON-S Conference 2026, Dublin</li>
+            <li>• Commentary on Articles 41, 42, 44, 45, 47, 48, 49 AI Act — in: AI Act Commentary (ed. Bieda, Lubasz, Namysłowska, Okoń)</li>
+            <li>• Second Global Report on the State of AI in Legal Practice (2025/2026)</li>
+            <li>• "AI and Corporate Responsibility – From Fragmented Compliance to Unified Governance" — Cambridge Forum on AI: Law and Governance (with Jarosław Greser)</li>
+          </ul>
+        </div>
+
+        <!-- Monographs -->
+        <h3 class="text-h2 text-navy mb-4">Monographs</h3>
+        <div class="space-y-3 mb-8">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Consequences of Constitutional Tribunal Rulings in Judicial Application of Law</p>
+            <p class="text-small text-slate">Warsaw 2016, Wydawnictwo Sejmowe, 394 pp. (Habilitation thesis)</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Protection of Medical Data</p>
+            <p class="text-small text-slate">Warsaw 2011, Wolters Kluwer, 237 pp.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Protection of Acquired Rights in the Polish Constitutional System</p>
+            <p class="text-small text-slate">Warsaw 2008, Wydawnictwo Sejmowe, 156 pp.</p>
+          </div>
+        </div>
+
+        <!-- Reports -->
+        <h3 class="text-h2 text-navy mb-4">Reports</h3>
+        <div class="space-y-3 mb-8">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">First Global Report on the State of Artificial Intelligence in Legal Practice (2023)</p>
+            <p class="text-small text-slate">With Araszkiewicz, Zadrożny, Porębski, Constantini, Van Dijck, Ebers, Francesconi, Ghosh, Harašta, Lauritsen, Libal, Maranhao, Medvedeva, Pagallo, Satoh, Schafer, Savelka, Xiong, Chi, Walker, Waltl, Zeleznikow, Żurek</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">First Global Report on the State of AI in Legal Practice</p>
+            <p class="text-small text-slate">Legal Tech Zeitschrift 2024, no. 3, p. 226-235</p>
+          </div>
+        </div>
+
+        <!-- Book Chapters -->
+        <h3 class="text-h2 text-navy mb-4">Book Chapters</h3>
+        <div class="space-y-3 mb-8">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Artificial Intelligence and Legal Practice</p>
+            <p class="text-small text-slate">In: Science, Technology and Law (2024, Bologna University Press), p. 233-242 — with Natalia Mushak</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Typology of Constitutional Changes</p>
+            <p class="text-small text-slate">In: Polish Constitutionalism (2020), p. 1217-1226</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">On the Consequences of Constitutional Tribunal Rulings in Judicial Application of Law 2015-2017</p>
+            <p class="text-small text-slate">In: Constitutional Judiciary (2018), p. 83-100</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Judicial Control of Public Power in Poland</p>
+            <p class="text-small text-slate">In: Judicial Control of Public Power in National and International Law (ed. R. Arnold, J.I. Martinez), Springer International 2016</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Declared Conflict and Effective Cooperation Between the Polish Constitutional Court and Other Courts Upon Interpretive Judgements</p>
+            <p class="text-small text-slate">In: Constitutional Courts and Ordinary Courts: Cooperation or Conflict? XVIIth International Congress on European and Comparative Constitutional Law, Regensburg 2015</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Application of Constitutional Tribunal Rulings by Courts During Deferral Period</p>
+            <p class="text-small text-slate">In: Constitutionalization of Civil Procedure (ed. Ł. Błaszczak), Wrocław 2015, p. 123-139</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Binding Force of Interpretive Judgments</p>
+            <p class="text-small text-slate">In: Systems – Traditions and Comparisons (ed. P. Mikuli), Warsaw 2015, p. 751-764 — with Prof. K. Działocha</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Right of Petition and Actio Popularis</p>
+            <p class="text-small text-slate">In: Theoretical and Practical Aspects of Petition Law (ed. M. Jabłoński, R. Balicki), Wrocław 2015, p. 353-362</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Execution of Constitutional Tribunal Rulings by Courts</p>
+            <p class="text-small text-slate">In: Execution of Constitutional Tribunal Rulings in Constitutional Practice of State Organs (ed. K. Działocha, S. Jarosz-Żukowska), Warsaw 2013, p. 282-388</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Legal Mechanisms for Transfer of OFE Funds: Constitutional Assessments</p>
+            <p class="text-small text-slate">In: (ed. R. Pacud), Kraków 2013, Oficyna Allerhanda, chapters II.1, III.3, IV.5</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Execution of Affirmative Rulings of the Constitutional Tribunal by the Supreme Court and the Supreme Administrative Court</p>
+            <p class="text-small text-slate">In: The Constitution of the Republic of Poland in the First Decades of the 21st Century (ed. S. Biernat), Constitutional Judiciary Issues 2012, no. 1, p. 187-203</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Execution of Constitutional Tribunal Rulings by Courts Submitting Legal Questions</p>
+            <p class="text-small text-slate">In: Law in Service of State and Society (Festschrift for Prof. K. Działocha), Wrocław 2012, p. 159-178</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Restoration of Constitutionality in Constitutional Tribunal Jurisprudence</p>
+            <p class="text-small text-slate">In: Book of the 25th Anniversary of the Constitutional Tribunal (ed. K. Budziło), Warsaw 2010, p. 211-225</p>
+          </div>
+        </div>
+
+        <!-- Edited Volumes -->
+        <h3 class="text-h2 text-navy mb-4">Edited Volumes</h3>
+        <div class="space-y-3 mb-8">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Modern Technical Means of Obtaining Information (Recording, Wiretapping, Monitoring, GPS-Tracking) in the Polish Legal System</p>
+            <p class="text-small text-slate">Warsaw 2015, 130 pp. — Introduction and Scientific Editing</p>
+          </div>
+        </div>
+
+        <!-- Selected Articles -->
+        <h3 class="text-h2 text-navy mb-4">Selected Articles</h3>
+        <div class="space-y-3 mb-8">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Violation of Sejm Rules as Basis for Declaring Unconstitutionality of a Statute</p>
+            <p class="text-small text-slate">Palestra 4/2016, p. 121-126</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Processing of Personal Data by Lawyers After the Schrems Judgment</p>
+            <p class="text-small text-slate">Palestra 1-2/2016, p. 46-56</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">The Principle of Ne Bis In Idem in ECtHR Jurisprudence</p>
+            <p class="text-small text-slate">State and Law (PiP) 9/2012, p. 18-30</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Constitutionalization of the Ne Bis In Idem Principle in Polish Legal Order</p>
+            <p class="text-small text-slate">Parliamentary Review 6/2011, p. 79-98</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">"Injunction" and Proceedings Before the Constitutional Tribunal</p>
+            <p class="text-small text-slate">State and Law (PiP) 5/2011, p. 19-30</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Hosting Operations on Data Covered by Exclusion of Liability</p>
+            <p class="text-small text-slate">Legal Monitor 24/2009, p. 1333-1336</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Protection of Acquired Rights and Economic Crisis</p>
+            <p class="text-small text-slate">State and Law (PiP) 2009, no. 8, p. 3-16</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">The Principle of Protection of Acquired Rights in Polish Constitutional Law</p>
+            <p class="text-small text-slate">Parliamentary Review 2008, no. 1, p. 11-28</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Expectancy as an Object of Constitutional Protection</p>
+            <p class="text-small text-slate">State and Law (PiP) 2007, no. 11, p. 93-101</p>
+          </div>
+        </div>
+
+        <!-- Constitutional Tribunal Reviews -->
+        <h3 class="text-h2 text-navy mb-4">Constitutional Tribunal Case Reviews</h3>
+        <p class="text-body text-slate mb-4">Regular contributor to Palestra journal with reviews of Constitutional Tribunal jurisprudence (2010-2015), covering topics including:</p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Criminal Law</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Professional Self-Governance</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Banking Privileges</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Bankruptcy Law</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Freedom of Speech</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Defense Costs</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Family Law</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Labor Law</span>
+          <span class="px-3 py-1 bg-gray-100 text-slate text-small rounded-full">Attorney-Client Privilege</span>
+        </div>
+
+        <!-- Commentaries -->
+        <h3 class="text-h2 text-navy mb-4">Case Commentaries (Glosses)</h3>
+        <div class="space-y-3">
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Commentary on Constitutional Tribunal Ruling K 19/14</p>
+            <p class="text-small text-slate">Palestra 2015, no. 9-10, p. 179-183</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Commentary on Constitutional Tribunal Ruling K 33/13</p>
+            <p class="text-small text-slate">Parliamentary Review 2015, no. 4, p. 151-158</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">On Oversight of Proper Performance of Public Trust Professions (Commentary on K 1/10)</p>
+            <p class="text-small text-slate">Palestra 1-2/2012, p. 155-161</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Commentary on Supreme Administrative Court Resolution II GPS 1/10</p>
+            <p class="text-small text-slate">Scientific Papers of Administrative Judiciary 2011, no. 1, p. 170-177</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Commentary on ECtHR Judgment (Application no. 10373/05)</p>
+            <p class="text-small text-slate">State and Law (PiP) 2010, no. 7, p. 115-119</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border border-gray-200">
+            <p class="text-body text-navy font-medium">Commentary on Constitutional Tribunal Ruling SK 30/04</p>
+            <p class="text-small text-slate">State and Law (PiP) 2007, no. 4, p. 136-140</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching" class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-4">Teaching & Education</h2>
+        <p class="text-body text-slate mb-8 max-w-2xl">
+          Educating the next generation of lawyers on AI law, technology regulation,
+          and the ethical challenges of automated decision-making.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">AI & Law</h3>
+            <p class="text-body text-slate">
+              Courses on AI regulation, EU AI Act, and legal implications of machine learning.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Technology Law</h3>
+            <p class="text-body text-slate">
+              Comprehensive overview of digital services regulation, platform liability, and data protection.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Guest Lectures</h3>
+            <p class="text-body text-slate">
+              Regular speaking engagements at universities and professional training programs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-20 bg-navy">
+      <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-h1 text-white mb-4">Interested in Collaboration?</h2>
+        <p class="text-body text-gray-300 mb-8">
+          Open to research collaborations, speaking engagements, and academic partnerships.
+        </p>
+        <a
+          href="/en/contact"
+          class="inline-block px-8 py-3 bg-white text-navy font-medium rounded hover:bg-gray-100 transition-colors"
+        >
+          Get in touch
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

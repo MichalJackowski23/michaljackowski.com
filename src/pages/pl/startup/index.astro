@@ -1,0 +1,133 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Startup - AnyLawyer | Prof. Michał Jackowski" lang="pl">
+  <Header lang="pl" />
+  <main>
+    <!-- Hero -->
+    <section class="py-16 md:py-24 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <p class="text-small text-blue font-medium uppercase tracking-wide mb-4">Startup</p>
+        <h1 class="text-display text-navy mb-6">Innowacje LegalTech</h1>
+        <p class="text-h2 text-slate max-w-2xl">
+          Budowanie przyszłości usług prawnych poprzez technologię i AI.
+        </p>
+      </div>
+    </section>
+
+    <!-- AnyLawyer -->
+    <section class="py-16 md:py-20">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Content -->
+          <div>
+            <img
+              src="/images/logos/anylawyer.svg"
+              alt="AnyLawyer"
+              class="h-12 mb-6"
+            />
+            <h2 class="text-h1 text-navy mb-4">AnyLawyer</h2>
+            <p class="text-body text-slate mb-6">
+              AnyLawyer to platforma technologii prawniczej wykorzystująca sztuczną inteligencję
+              do transformacji sposobu świadczenia usług prawnych. Jako CEO i Współzałożyciel prowadzę
+              wizję uczynienia ekspertyzy prawnej bardziej dostępną i efektywną poprzez
+              innowacyjne technologie.
+            </p>
+            <p class="text-body text-slate mb-6">
+              Platforma łączy najnowocześniejsze możliwości AI z głęboką wiedzą prawniczą,
+              dostarczając rozwiązania, które pomagają kancelariom prawnym, działom prawnym
+              firm i profesjonalistom prawnym pracować mądrzej i osiągać lepsze wyniki
+              dla swoich klientów.
+            </p>
+
+            <h3 class="text-h2 text-navy mb-3">Kluczowe funkcje</h3>
+            <ul class="space-y-2 text-body text-slate mb-8">
+              <li class="flex items-start gap-2">
+                <span class="text-blue">•</span>
+                Badania prawne i analiza dokumentów wspierane przez AI
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue">•</span>
+                Inteligentna weryfikacja i asystent tworzenia umów
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue">•</span>
+                Monitoring zgodności i aktualizacje regulacyjne
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue">•</span>
+                Automatyzacja przepływów pracy procesów prawnych
+              </li>
+            </ul>
+
+            <a
+              href="https://anylawyer.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-blue text-white font-medium rounded hover:bg-blue-light transition-colors"
+            >
+              Odwiedź AnyLawyer
+              <span>↗</span>
+            </a>
+          </div>
+
+          <!-- Visual -->
+          <div class="bg-gray-100 rounded-lg p-8 md:p-12 text-center">
+            <div class="text-6xl mb-4">⚖️</div>
+            <p class="text-h2 text-navy mb-2">AI + Prawo</p>
+            <p class="text-small text-slate">
+              Transformacja usług prawnych poprzez technologię
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Role -->
+    <section class="py-16 md:py-20 bg-gray-50">
+      <div class="max-w-content mx-auto px-6 lg:px-12">
+        <h2 class="text-h1 text-navy mb-8">Moja rola</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">CEO i Współzałożyciel</h3>
+            <p class="text-body text-slate">
+              Prowadzenie strategicznej wizji, rozwoju biznesu i kierunku produktu platformy.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">Ekspert prawny</h3>
+            <p class="text-body text-slate">
+              Zapewnienie, że rozwiązania AI spełniają najwyższe standardy prawne i etyczne.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg border border-gray-200">
+            <h3 class="text-h2 text-navy mb-2">AI Governance</h3>
+            <p class="text-body text-slate">
+              Wdrażanie odpowiedzialnych praktyk AI zgodnych z regulacjami UE.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 md:py-20 bg-navy">
+      <div class="max-w-content mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-h1 text-white mb-4">Zainteresowany LegalTech?</h2>
+        <p class="text-body text-gray-300 mb-8">
+          Porozmawiajmy o tym, jak AI może przekształcić Twoją praktykę prawną.
+        </p>
+        <a
+          href="/pl/kontakt"
+          class="inline-block px-8 py-3 bg-white text-navy font-medium rounded hover:bg-gray-100 transition-colors"
+        >
+          Skontaktuj się
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer lang="pl" />
+</BaseLayout>
