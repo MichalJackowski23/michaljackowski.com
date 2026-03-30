@@ -56,30 +56,38 @@ const t = content[lang];
       ))}
     </div>
 
-    <div class="flex flex-wrap justify-center gap-3 mb-8">
-      {t.credentials.map((credential) => (
-        <span class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium">
-          {credential}
-        </span>
-      ))}
+    <div class="flex flex-wrap justify-center gap-3">
+      <button
+        onclick="document.getElementById('emba-modal').classList.remove('hidden')"
+        class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium hover:bg-blue/20 cursor-pointer transition-colors"
+      >
+        Executive MBA — ESCP Europe
+      </button>
+      <button
+        onclick="document.getElementById('scrum-modal').classList.remove('hidden')"
+        class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium hover:bg-blue/20 cursor-pointer transition-colors"
+      >
+        Professional Scrum Master I
+      </button>
+      <span class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium">
+        {lang === 'en' ? 'Certified Business Psychologist' : 'Certyfikowany Psycholog Biznesu'}
+      </span>
     </div>
+  </div>
 
-    <!-- Credential Certificates -->
-    <div class="flex flex-wrap justify-center gap-6">
-      <a href="/images/credentials/emba-diploma.png" target="_blank" class="block hover:opacity-90 transition-opacity">
-        <img
-          src="/images/credentials/emba-diploma.png"
-          alt="Executive MBA - ESCP Europe"
-          class="h-24 md:h-32 w-auto object-contain rounded shadow-sm border border-gray-200"
-        />
-      </a>
-      <a href="/images/credentials/scrum-master.png" target="_blank" class="block hover:opacity-90 transition-opacity">
-        <img
-          src="/images/credentials/scrum-master.png"
-          alt="Professional Scrum Master I"
-          class="h-24 md:h-32 w-auto object-contain rounded shadow-sm border border-gray-200"
-        />
-      </a>
+  <!-- EMBA Modal -->
+  <div id="emba-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80" onclick="this.classList.add('hidden')">
+    <div class="relative max-w-4xl max-h-[90vh] p-4">
+      <img src="/images/credentials/emba-diploma.png" alt="Executive MBA - ESCP Europe" class="max-w-full max-h-[85vh] object-contain rounded-lg" />
+      <button class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
+    </div>
+  </div>
+
+  <!-- Scrum Modal -->
+  <div id="scrum-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80" onclick="this.classList.add('hidden')">
+    <div class="relative max-w-4xl max-h-[90vh] p-4">
+      <img src="/images/credentials/scrum-master.png" alt="Professional Scrum Master I" class="max-w-full max-h-[85vh] object-contain rounded-lg" />
+      <button class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
     </div>
   </div>
 </section>
