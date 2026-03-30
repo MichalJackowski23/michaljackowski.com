@@ -56,12 +56,30 @@ const t = content[lang];
       ))}
     </div>
 
-    <div class="flex flex-wrap justify-center gap-3">
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
       {t.credentials.map((credential) => (
         <span class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium">
           {credential}
         </span>
       ))}
+    </div>
+
+    <!-- Credential Certificates -->
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="/images/credentials/emba-diploma.png" target="_blank" class="block hover:opacity-90 transition-opacity">
+        <img
+          src="/images/credentials/emba-diploma.png"
+          alt="Executive MBA - ESCP Europe"
+          class="h-24 md:h-32 w-auto object-contain rounded shadow-sm border border-gray-200"
+        />
+      </a>
+      <a href="/images/credentials/scrum-master.png" target="_blank" class="block hover:opacity-90 transition-opacity">
+        <img
+          src="/images/credentials/scrum-master.png"
+          alt="Professional Scrum Master I"
+          class="h-24 md:h-32 w-auto object-contain rounded shadow-sm border border-gray-200"
+        />
+      </a>
     </div>
   </div>
 </section>

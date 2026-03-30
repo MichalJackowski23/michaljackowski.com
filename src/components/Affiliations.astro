@@ -16,11 +16,13 @@ const content = {
 
 const t = content[lang];
 
-// Affiliations with updated links
+// Primary affiliation (DSK - larger)
+const primaryAffiliation = { name: 'DSK Kancelaria', logo: '/images/logos/dsk.png', href: 'https://dsk-kancelaria.pl/zespol/michal-jackowski/' };
+
+// Other affiliations
 const affiliations = [
   { name: 'Cambridge', logo: '/images/logos/cambridge.svg', href: 'https://www.law.cam.ac.uk' },
   { name: 'EU AI Office', logo: '/images/logos/eu-ai-office.svg', href: 'https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai' },
-  { name: 'DSK', logo: '/images/logos/dsk.png', href: 'https://dsk-kancelaria.pl/zespol/michal-jackowski/' },
   { name: 'GRAI', logo: '/images/logos/grai.png', href: 'https://ai.gov.pl/grupa-robocza-ai/wspolpraca-miedzynarodowa' },
   { name: 'PIIT', logo: '/images/logos/piit.png', href: 'https://piit.org.pl/o-nas/eksperci/michal-jackowski' },
   { name: 'CEN-CENELEC', logo: '/images/logos/cen-cenelec.svg', href: 'https://www.cencenelec.eu/areas-of-work/cen-cenelec-topics/artificial-intelligence/' },
@@ -38,6 +40,24 @@ const affiliations = [
       {t.title}
     </h3>
 
+    <!-- Primary Affiliation (DSK - 1.5x larger) -->
+    <div class="flex justify-center mb-8">
+      <a
+        href={primaryAffiliation.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block hover:opacity-80 transition-all"
+        title={primaryAffiliation.name}
+      >
+        <img
+          src={primaryAffiliation.logo}
+          alt={primaryAffiliation.name}
+          class="h-12 md:h-16 w-auto object-contain"
+        />
+      </a>
+    </div>
+
+    <!-- Other Affiliations -->
     <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
       {affiliations.map((affiliation) => (
         <a
