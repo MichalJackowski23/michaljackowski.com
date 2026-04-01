@@ -69,9 +69,12 @@ const t = content[lang];
       >
         Professional Scrum Master I
       </button>
-      <span class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium">
+      <button
+        onclick="document.getElementById('app-modal').classList.remove('hidden')"
+        class="px-3 py-1 bg-blue/10 text-blue text-caption rounded-full font-medium hover:bg-blue/20 cursor-pointer transition-colors"
+      >
         {lang === 'en' ? 'Certified Business Psychologist' : 'Certyfikowany Psycholog Biznesu'}
-      </span>
+      </button>
     </div>
   </div>
 
@@ -87,6 +90,14 @@ const t = content[lang];
   <div id="scrum-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80" onclick="this.classList.add('hidden')">
     <div class="relative max-w-4xl max-h-[90vh] p-4">
       <img src="/images/credentials/scrum-master.png" alt="Professional Scrum Master I" class="max-w-full max-h-[85vh] object-contain rounded-lg" />
+      <button class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
+    </div>
+  </div>
+
+  <!-- APP Modal -->
+  <div id="app-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80" onclick="this.classList.add('hidden')">
+    <div class="relative max-w-4xl max-h-[90vh] p-4">
+      <img src="/images/credentials/app-diploma.png" alt="Certified Business Psychologist" class="max-w-full max-h-[85vh] object-contain rounded-lg" />
       <button class="absolute top-2 right-2 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
     </div>
   </div>
