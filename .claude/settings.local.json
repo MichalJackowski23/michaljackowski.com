@@ -32,7 +32,8 @@
       "WebFetch(domain:szkolaprzywodztwa.pl)",
       "WebFetch(domain:euas.eu)",
       "WebFetch(domain:futurelaw.ee)",
-      "Bash(sips:*)"
+      "Bash(sips:*)",
+      "WebFetch(domain:rankingi.rp.pl)"
     ]
   }
 }
