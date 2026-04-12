@@ -10,6 +10,7 @@ const content = {
     title: 'Recent & Upcoming',
     types: {
       upcoming: 'Upcoming',
+      award: 'Award',
       publication: 'Publication',
       podcast: 'Podcast'
     },
@@ -17,6 +18,16 @@ const content = {
     read: 'Read',
     listen: 'Listen',
     items: [
+      {
+        type: 'award',
+        date: '2025',
+        title: 'TMT Market Leader — Rzeczpospolita Ranking',
+        description: 'Recognized as a Market Leader in Technology, Media & Telecommunications law in Poland.',
+        category: 'Ranking',
+        href: 'https://rankingi.rp.pl/rankingkancelarii/2025/rekomendacje_I',
+        action: 'View',
+        external: true
+      },
       {
         type: 'upcoming',
         date: 'May 14-15, 2026 · Tallinn',
@@ -63,6 +74,7 @@ const content = {
     title: 'Aktualności',
     types: {
       upcoming: 'Nadchodzące',
+      award: 'Wyróżnienie',
       publication: 'Publikacja',
       podcast: 'Podcast'
     },
@@ -70,6 +82,16 @@ const content = {
     read: 'Czytaj',
     listen: 'Słuchaj',
     items: [
+      {
+        type: 'award',
+        date: '2025',
+        title: 'Lider Rynku TMT — Ranking Rzeczpospolitej',
+        description: 'Wyróżnienie jako Lider Rynku w kategorii Technologie, Media i Telekomunikacja w Polsce.',
+        category: 'Ranking',
+        href: 'https://rankingi.rp.pl/rankingkancelarii/2025/rekomendacje_I',
+        action: 'Zobacz',
+        external: true
+      },
       {
         type: 'upcoming',
         date: '14-15 maja 2026 · Tallinn',
@@ -118,12 +140,14 @@ const t = content[lang];
 
 const typeStyles = {
   upcoming: 'text-blue border-blue',
+  award: 'text-amber-600 border-amber-600',
   publication: 'text-slate border-slate',
   podcast: 'text-navy border-navy'
 };
 
 const typeIcons = {
   upcoming: '📅',
+  award: '🏆',
   publication: '📄',
   podcast: '🎙️'
 };
