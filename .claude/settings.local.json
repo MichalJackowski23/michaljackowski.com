@@ -33,7 +33,8 @@
       "WebFetch(domain:euas.eu)",
       "WebFetch(domain:futurelaw.ee)",
       "Bash(sips:*)",
-      "WebFetch(domain:rankingi.rp.pl)"
+      "WebFetch(domain:rankingi.rp.pl)",
+      "WebFetch(domain:eqif.org)"
     ]
   }
 }
