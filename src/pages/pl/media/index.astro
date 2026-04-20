@@ -31,16 +31,23 @@ const speakingAgencies = [
 ];
 
 const mediaAppearances = [
-  { title: 'Prawno-biznesowe aspekty sztucznej inteligencji', outlet: 'RDC Radio · Magazyn Ekonomiczny', url: 'https://www.rdc.pl/podcast/magazyn-ekonomiczny_UTwfU2vb8FOR2vCLz4fL?episode=qg0Q0m7RUC2YzdYhqOJz&active_page=1' },
-  { title: 'Przywództwo w świecie AI okiem prawnika', outlet: 'Values Podcast', url: 'https://values.pl/podcast/przywodztwo-w-swiecie-ai-okiem-wybitnego-prawnika/' },
-  { title: 'Wywiad Dzień Dobry TVN', outlet: 'TVN', url: 'https://player.pl/programy-online/dzien-dobry-tvn-odcinki,15232/odcinek-381,S28E381,201407' },
-  { title: 'AI w praktyce prawniczej', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=8wV5lXB85y8' },
-  { title: 'Przyszłość regulacji AI', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=BBxlQxA2FGw' },
-  { title: 'Innowacje Legal Tech', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=5jFqdTw7ADc' },
-  { title: 'AI i prawo - dyskusja', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=pxiAFZDGSNY' },
-  { title: 'Regulacje technologiczne', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=JHBaYZ8XIZM' },
-  { title: 'Panel ekspertów AI Governance', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=q12Z-GHhgLg' }
+  { title: 'Prawno-biznesowe aspekty sztucznej inteligencji', outlet: 'RDC Radio · Magazyn Ekonomiczny', url: 'https://www.rdc.pl/podcast/magazyn-ekonomiczny_UTwfU2vb8FOR2vCLz4fL?episode=qg0Q0m7RUC2YzdYhqOJz&active_page=1', type: 'radio' },
+  { title: 'Przywództwo w świecie AI okiem prawnika', outlet: 'Values Podcast', url: 'https://values.pl/podcast/przywodztwo-w-swiecie-ai-okiem-wybitnego-prawnika/', type: 'podcast' },
+  { title: 'Wywiad Dzień Dobry TVN', outlet: 'TVN', url: 'https://player.pl/programy-online/dzien-dobry-tvn-odcinki,15232/odcinek-381,S28E381,201407', type: 'tv' },
+  { title: 'AI w praktyce prawniczej', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=8wV5lXB85y8', type: 'video', videoId: '8wV5lXB85y8' },
+  { title: 'Przyszłość regulacji AI', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=BBxlQxA2FGw', type: 'video', videoId: 'BBxlQxA2FGw' },
+  { title: 'Innowacje Legal Tech', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=5jFqdTw7ADc', type: 'video', videoId: '5jFqdTw7ADc' },
+  { title: 'AI i prawo - dyskusja', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=pxiAFZDGSNY', type: 'video', videoId: 'pxiAFZDGSNY' },
+  { title: 'Regulacje technologiczne', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=JHBaYZ8XIZM', type: 'video', videoId: 'JHBaYZ8XIZM' },
+  { title: 'Panel ekspertów AI Governance', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=q12Z-GHhgLg', type: 'video', videoId: 'q12Z-GHhgLg' }
 ];
+
+const mediaIcons = {
+  radio: '📻',
+  podcast: '🎙️',
+  tv: '📺',
+  video: '▶️'
+};
 
 const conferencesEvents = [
   { title: 'Kongres Ochrony Danych i Nowych Technologii 2026', event: 'UODO · Panel: Regulacje AI i danych w UE, Chinach i USA', url: 'https://uodo.gov.pl/pl/643/4035' },
@@ -202,10 +209,25 @@ const popularArticles = [
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
+              class="group bg-white rounded-lg border border-gray-200 hover:border-blue transition-colors overflow-hidden"
             >
-              <p class="text-caption text-blue mb-1">{item.outlet}</p>
-              <p class="text-body text-navy font-medium">{item.title}</p>
+              {item.videoId ? (
+                <div class="aspect-video bg-gray-100 overflow-hidden">
+                  <img
+                    src={`https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`}
+                    alt={item.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  />
+                </div>
+              ) : (
+                <div class="h-20 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                  <span class="text-4xl">{mediaIcons[item.type]}</span>
+                </div>
+              )}
+              <div class="p-4">
+                <p class="text-caption text-blue mb-1">{item.outlet}</p>
+                <p class="text-body text-navy font-medium group-hover:text-blue transition-colors">{item.title}</p>
+              </div>
             </a>
           ))}
         </div>
