@@ -49,8 +49,8 @@ const mediaIcons = {
   video: '▶️'
 };
 
-// Upcoming conferences (2025-2026)
-const upcomingConferences = [
+// Most recent conferences
+const recentConferences = [
   { title: 'Data Protection & New Technologies Congress', event: 'Panel: AI & Data Regulations in EU, China & USA', url: 'https://uodo.gov.pl/pl/643/4035', year: '2026', type: 'ailaw', location: 'Warsaw', org: 'UODO' },
   { title: 'PINT 2025', event: 'Legal Innovation Conference', url: 'https://pint24.oirp.krakow.pl/agenda/', year: '2025', type: 'legaltech', location: 'Kraków', org: 'OIRP' },
   { title: 'Pozitive Tech 2025', event: 'Tech Conference', url: 'https://pozitive.tech/prelegenci-zestawien/prof-michal-jackowski/', year: '2025', type: 'tech', location: 'Poznań', org: '' },
@@ -59,8 +59,8 @@ const upcomingConferences = [
   { title: 'Rzeszów AI Summit 2025', event: 'AI for Law, Science & Society', url: 'https://www.ur.edu.pl/pl/konferencje/rzeszow-ai-summit-2025-next-generation-artificial-intelligence-for-law-science-innovation-and-society/prelegenci', year: '2025', type: 'ailaw', location: 'Rzeszów', org: '' }
 ];
 
-// Past conferences
-const pastConferences = [
+// Other conferences
+const otherConferences = [
   { title: 'FutureLaw 2024', event: 'Legal Innovation', url: 'https://futurelaw.ee/futurelaw-2024/', year: '2024', type: 'legaltech', location: 'Tallinn' },
   { title: 'World Technology Law Conference', event: 'ITechLaw', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-world-technology-law-conference-2024/', year: '2024', type: 'legaltech', location: 'Brussels' },
   { title: 'ML in PL Conference', event: 'Machine Learning', url: 'https://conference2024.mlinpl.org', year: '2024', type: 'tech', location: 'Warsaw' },
@@ -284,13 +284,10 @@ const popularArticles = [
           Speaking at leading international conferences on AI law, legal technology, and digital governance.
         </p>
 
-        <!-- Upcoming Conferences -->
-        <h3 class="text-h2 text-navy mb-4 flex items-center gap-2">
-          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-          Upcoming
-        </h3>
+        <!-- Most Recent Conferences -->
+        <h3 class="text-h2 text-navy mb-4">Most Recent</h3>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          {upcomingConferences.map((item) => (
+          {recentConferences.map((item) => (
             <a
               href={item.url}
               target="_blank"
@@ -313,10 +310,10 @@ const popularArticles = [
           ))}
         </div>
 
-        <!-- Past Conferences -->
-        <h3 class="text-h2 text-navy mb-4">Past Events</h3>
+        <!-- Other Conferences -->
+        <h3 class="text-h2 text-navy mb-4">Other Events</h3>
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-3">
-          {pastConferences.map((item) => (
+          {otherConferences.map((item) => (
             <a
               href={item.url}
               target="_blank"
