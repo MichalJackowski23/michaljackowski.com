@@ -31,15 +31,15 @@ const speakingAgencies = [
 ];
 
 const mediaAppearances = [
-  { title: 'Legal & Business Aspects of AI', outlet: 'RDC Radio · Magazyn Ekonomiczny', url: 'https://www.rdc.pl/podcast/magazyn-ekonomiczny_UTwfU2vb8FOR2vCLz4fL?episode=qg0Q0m7RUC2YzdYhqOJz&active_page=1', type: 'radio' },
-  { title: 'AI Leadership Through a Lawyer\'s Eyes', outlet: 'Values Podcast', url: 'https://values.pl/podcast/przywodztwo-w-swiecie-ai-okiem-wybitnego-prawnika/', type: 'podcast' },
-  { title: 'Dzień Dobry TVN Interview', outlet: 'TVN', url: 'https://player.pl/programy-online/dzien-dobry-tvn-odcinki,15232/odcinek-381,S28E381,201407', type: 'tv' },
-  { title: 'AI in Legal Practice', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=8wV5lXB85y8', type: 'video', videoId: '8wV5lXB85y8' },
-  { title: 'Future of AI Regulation', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=BBxlQxA2FGw', type: 'video', videoId: 'BBxlQxA2FGw' },
-  { title: 'Legal Tech Innovation', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=5jFqdTw7ADc', type: 'video', videoId: '5jFqdTw7ADc' },
-  { title: 'AI & Law Discussion', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=pxiAFZDGSNY', type: 'video', videoId: 'pxiAFZDGSNY' },
-  { title: 'Technology Regulation', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=JHBaYZ8XIZM', type: 'video', videoId: 'JHBaYZ8XIZM' },
-  { title: 'AI Governance Expert Panel', outlet: 'YouTube', url: 'https://www.youtube.com/watch?v=q12Z-GHhgLg', type: 'video', videoId: 'q12Z-GHhgLg' }
+  { title: 'Legal & Business Aspects of AI', outlet: 'RDC Radio · Magazyn Ekonomiczny', url: 'https://www.rdc.pl/podcast/magazyn-ekonomiczny_UTwfU2vb8FOR2vCLz4fL?episode=qg0Q0m7RUC2YzdYhqOJz&active_page=1', type: 'radio', description: 'Discussion on AI regulations and their impact on business in Poland.' },
+  { title: 'AI Leadership Through a Lawyer\'s Eyes', outlet: 'Values Podcast', url: 'https://values.pl/podcast/przywodztwo-w-swiecie-ai-okiem-wybitnego-prawnika/', type: 'podcast', description: 'Leadership in the age of AI from a legal perspective.' },
+  { title: 'Dzień Dobry TVN Interview', outlet: 'TVN', url: 'https://player.pl/programy-online/dzien-dobry-tvn-odcinki,15232/odcinek-381,S28E381,201407', type: 'tv', description: 'Morning TV segment on artificial intelligence and everyday life.' },
+  { title: 'AI in Legal Practice', outlet: 'Keystory', url: 'https://www.youtube.com/watch?v=8wV5lXB85y8', type: 'video', description: 'How AI is transforming the daily work of lawyers and law firms.' },
+  { title: 'Future of AI Regulation', outlet: 'InfoShare', url: 'https://www.youtube.com/watch?v=BBxlQxA2FGw', type: 'video', description: 'Panel discussion on upcoming AI regulations in Europe.' },
+  { title: 'Legal Tech Innovation', outlet: 'Targi Książki', url: 'https://www.youtube.com/watch?v=5jFqdTw7ADc', type: 'video', description: 'How AI is changing the book publishing industry and copyright law.' },
+  { title: 'AI & Law Discussion', outlet: 'Escola Mobile', url: 'https://www.youtube.com/watch?v=pxiAFZDGSNY', type: 'video', description: 'Legal aspects of artificial intelligence implementation.' },
+  { title: 'Technology Regulation', outlet: 'Taby vs Space', url: 'https://www.youtube.com/watch?v=JHBaYZ8XIZM', type: 'video', description: 'Is AI in IT legal? Discussion on tech regulation frameworks.' },
+  { title: 'AI Governance Expert Panel', outlet: 'SoDA Webinar', url: 'https://www.youtube.com/watch?v=q12Z-GHhgLg', type: 'video', description: 'Expert panel on AI governance and HR in the tech industry.' }
 ];
 
 const mediaIcons = {
@@ -221,24 +221,15 @@ const popularArticles = [
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="group bg-white rounded-lg border border-gray-200 hover:border-blue transition-colors overflow-hidden"
+              class="group bg-white rounded-lg border border-gray-200 hover:border-blue hover:shadow-md transition-all overflow-hidden"
             >
-              {item.videoId ? (
-                <div class="aspect-video bg-gray-100 overflow-hidden">
-                  <img
-                    src={`https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`}
-                    alt={item.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                  />
-                </div>
-              ) : (
-                <div class="h-20 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                  <span class="text-4xl">{mediaIcons[item.type]}</span>
-                </div>
-              )}
+              <div class="h-16 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center border-b border-gray-100">
+                <span class="text-3xl">{mediaIcons[item.type]}</span>
+              </div>
               <div class="p-4">
                 <p class="text-caption text-blue mb-1">{item.outlet}</p>
-                <p class="text-body text-navy font-medium group-hover:text-blue transition-colors">{item.title}</p>
+                <p class="text-body text-navy font-medium group-hover:text-blue transition-colors mb-2">{item.title}</p>
+                <p class="text-small text-slate">{item.description}</p>
               </div>
             </a>
           ))}
