@@ -49,26 +49,38 @@ const mediaIcons = {
   video: '▶️'
 };
 
-const conferencesEvents = [
-  { title: 'Data Protection & New Technologies Congress 2026', event: 'UODO · Panel: AI & Data Regulations in EU, China & USA', url: 'https://uodo.gov.pl/pl/643/4035' },
-  { title: 'PINT 2025', event: 'Legal Innovation Conference · Kraków', url: 'https://pint24.oirp.krakow.pl/agenda/' },
-  { title: 'Pozitive Tech 2025', event: 'Tech Conference', url: 'https://pozitive.tech/prelegenci-zestawien/prof-michal-jackowski/' },
-  { title: 'ICAIL 2025', event: 'International Conference on AI & Law', url: 'https://sites.northwestern.edu/icail2025/agenda/' },
-  { title: 'LegalTech Talk 2025', event: 'International Conference', url: 'https://www.legaltech-talk.com/agenda-2025/' },
-  { title: 'Rzeszów AI Summit 2025', event: 'AI for Law, Science & Society', url: 'https://www.ur.edu.pl/pl/konferencje/rzeszow-ai-summit-2025-next-generation-artificial-intelligence-for-law-science-innovation-and-society/prelegenci' },
-  { title: 'FutureLaw 2024', event: 'Estonia', url: 'https://futurelaw.ee/futurelaw-2024/' },
-  { title: 'World Technology Law Conference 2024', event: 'ITechLaw', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-world-technology-law-conference-2024/' },
-  { title: 'ML in PL Conference 2024', event: 'Machine Learning', url: 'https://conference2024.mlinpl.org' },
-  { title: 'Upgrade 2024', event: 'Business Conference', url: 'https://letsupgrade.pl/upgrade2024' },
-  { title: 'ILC Conference', event: 'Legal Innovation', url: 'https://konferencja.ilc.com.pl' },
-  { title: 'InfoShare', event: 'Tech Conference', url: 'https://infoshare.pl/speakers-list/michal-jackowski-o1744g628c48-one.html' },
-  { title: 'Open Forum AI', event: 'Poland', url: 'https://otwarteforumai.pl' },
-  { title: 'JURIX 2023', event: 'Legal Knowledge Systems', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-jurix-2023-conference/' },
-  { title: 'ICAIL 2023', event: 'AI & Law', url: 'https://dsk-kancelaria.pl/blog/michal-jackowski-na-konferencji-icail-2023/' },
-  { title: 'IDC CIO Summit', event: 'Sopot', url: 'https://dsk-kancelaria.pl/blog/michal-jackowski-na-idc-cio-summit-w-sopocie/' },
-  { title: 'Upgrade 2023', event: 'Business Conference', url: 'https://letsupgrade.pl/upgrade23' },
-  { title: 'LPM Conference 2022', event: 'Legal Project Management', url: 'https://lpm-conference-2022.syskonf.pl' }
+// Upcoming conferences (2025-2026)
+const upcomingConferences = [
+  { title: 'Data Protection & New Technologies Congress', event: 'Panel: AI & Data Regulations in EU, China & USA', url: 'https://uodo.gov.pl/pl/643/4035', year: '2026', type: 'ailaw', location: 'Warsaw', org: 'UODO' },
+  { title: 'PINT 2025', event: 'Legal Innovation Conference', url: 'https://pint24.oirp.krakow.pl/agenda/', year: '2025', type: 'legaltech', location: 'Kraków', org: 'OIRP' },
+  { title: 'Pozitive Tech 2025', event: 'Tech Conference', url: 'https://pozitive.tech/prelegenci-zestawien/prof-michal-jackowski/', year: '2025', type: 'tech', location: 'Poznań', org: '' },
+  { title: 'ICAIL 2025', event: 'International Conference on AI & Law', url: 'https://sites.northwestern.edu/icail2025/agenda/', year: '2025', type: 'ailaw', location: 'Chicago', org: '' },
+  { title: 'LegalTech Talk 2025', event: 'International Conference', url: 'https://www.legaltech-talk.com/agenda-2025/', year: '2025', type: 'legaltech', location: 'Berlin', org: '' },
+  { title: 'Rzeszów AI Summit 2025', event: 'AI for Law, Science & Society', url: 'https://www.ur.edu.pl/pl/konferencje/rzeszow-ai-summit-2025-next-generation-artificial-intelligence-for-law-science-innovation-and-society/prelegenci', year: '2025', type: 'ailaw', location: 'Rzeszów', org: '' }
 ];
+
+// Past conferences
+const pastConferences = [
+  { title: 'FutureLaw 2024', event: 'Legal Innovation', url: 'https://futurelaw.ee/futurelaw-2024/', year: '2024', type: 'legaltech', location: 'Tallinn' },
+  { title: 'World Technology Law Conference', event: 'ITechLaw', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-world-technology-law-conference-2024/', year: '2024', type: 'legaltech', location: 'Brussels' },
+  { title: 'ML in PL Conference', event: 'Machine Learning', url: 'https://conference2024.mlinpl.org', year: '2024', type: 'tech', location: 'Warsaw' },
+  { title: 'Upgrade 2024', event: 'Business Conference', url: 'https://letsupgrade.pl/upgrade2024', year: '2024', type: 'business', location: 'Warsaw' },
+  { title: 'ILC Conference', event: 'Legal Innovation', url: 'https://konferencja.ilc.com.pl', year: '2024', type: 'legaltech', location: 'Warsaw' },
+  { title: 'InfoShare', event: 'Tech Conference', url: 'https://infoshare.pl/speakers-list/michal-jackowski-o1744g628c48-one.html', year: '2024', type: 'tech', location: 'Gdańsk' },
+  { title: 'Open Forum AI', event: 'AI Conference', url: 'https://otwarteforumai.pl', year: '2024', type: 'tech', location: 'Warsaw' },
+  { title: 'JURIX 2023', event: 'Legal Knowledge Systems', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-jurix-2023-conference/', year: '2023', type: 'ailaw', location: 'Maastricht' },
+  { title: 'ICAIL 2023', event: 'AI & Law', url: 'https://dsk-kancelaria.pl/blog/michal-jackowski-na-konferencji-icail-2023/', year: '2023', type: 'ailaw', location: 'Braga' },
+  { title: 'IDC CIO Summit', event: 'IT Leadership', url: 'https://dsk-kancelaria.pl/blog/michal-jackowski-na-idc-cio-summit-w-sopocie/', year: '2023', type: 'business', location: 'Sopot' },
+  { title: 'Upgrade 2023', event: 'Business Conference', url: 'https://letsupgrade.pl/upgrade23', year: '2023', type: 'business', location: 'Warsaw' },
+  { title: 'LPM Conference', event: 'Legal Project Management', url: 'https://lpm-conference-2022.syskonf.pl', year: '2022', type: 'legaltech', location: 'Warsaw' }
+];
+
+const conferenceTypes = {
+  ailaw: { icon: '⚖️', label: 'AI & Law', color: 'bg-blue/10 text-blue' },
+  legaltech: { icon: '💼', label: 'Legal Tech', color: 'bg-navy/10 text-navy' },
+  tech: { icon: '🤖', label: 'Tech', color: 'bg-purple-100 text-purple-700' },
+  business: { icon: '📊', label: 'Business', color: 'bg-green-100 text-green-700' }
+};
 
 const popularArticles = [
   { title: 'With AI, You\'ll Become a Chemist and a Lawyer', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/rzecz-o-prawie/art41430351-michal-jackowski-michal-araszkiewicz-z-ai-zostaniesz-chemikiem-i-prawnikiem' },
@@ -272,16 +284,51 @@ const popularArticles = [
           Speaking at leading international conferences on AI law, legal technology, and digital governance.
         </p>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {conferencesEvents.map((item) => (
+        <!-- Upcoming Conferences -->
+        <h3 class="text-h2 text-navy mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          Upcoming
+        </h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          {upcomingConferences.map((item) => (
             <a
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
+              class="group bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl border border-gray-200 hover:border-blue hover:shadow-lg transition-all"
             >
-              <p class="text-body text-navy font-medium mb-1">{item.title}</p>
-              <p class="text-caption text-slate">{item.event}</p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-h1 text-navy/20 font-bold">{item.year}</span>
+                <span class={`text-caption px-2 py-1 rounded-full ${conferenceTypes[item.type].color}`}>
+                  {conferenceTypes[item.type].icon} {conferenceTypes[item.type].label}
+                </span>
+              </div>
+              <h4 class="text-h2 text-navy mb-1 group-hover:text-blue transition-colors">{item.title}</h4>
+              <p class="text-small text-slate mb-3">{item.event}</p>
+              <div class="flex items-center justify-between">
+                <span class="text-caption text-slate">📍 {item.location}</span>
+                <span class="text-small text-blue font-medium opacity-0 group-hover:opacity-100 transition-opacity">Details →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <!-- Past Conferences -->
+        <h3 class="text-h2 text-navy mb-4">Past Events</h3>
+        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-3">
+          {pastConferences.map((item) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
+            >
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-caption text-slate bg-gray-100 px-2 py-0.5 rounded">{item.year}</span>
+                <span class="text-sm">{conferenceTypes[item.type].icon}</span>
+              </div>
+              <p class="text-body text-navy font-medium mb-1 group-hover:text-blue transition-colors">{item.title}</p>
+              <p class="text-caption text-slate">{item.event} · {item.location}</p>
             </a>
           ))}
         </div>
