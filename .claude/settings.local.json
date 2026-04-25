@@ -34,7 +34,8 @@
       "WebFetch(domain:futurelaw.ee)",
       "Bash(sips:*)",
       "WebFetch(domain:rankingi.rp.pl)",
-      "WebFetch(domain:eqif.org)"
+      "WebFetch(domain:eqif.org)",
+      "Bash(wc:*)"
     ]
   }
 }
