@@ -37,5 +37,10 @@
       "WebFetch(domain:eqif.org)",
       "Bash(wc:*)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "gmail",
+    "drive"
+  ],
+  "enableAllProjectMcpServers": true
 }

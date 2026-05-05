@@ -1,0 +1,103 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const texts = {
+  en: {
+    message: 'This website uses cookies to analyze traffic and improve your experience.',
+    privacy: 'Privacy Policy',
+    accept: 'Accept',
+    reject: 'Reject'
+  },
+  pl: {
+    message: 'Ta strona używa plików cookie do analizy ruchu i poprawy jakości usług.',
+    privacy: 'Polityka prywatności',
+    accept: 'Akceptuję',
+    reject: 'Odrzucam'
+  }
+};
+
+const t = texts[lang];
+const privacyUrl = lang === 'en' ? '/en/privacy' : '/pl/prywatnosc';
+---
+
+<div
+  id="cookie-consent"
+  class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-navy text-white transform translate-y-full transition-transform duration-300"
+  role="dialog"
+  aria-labelledby="cookie-consent-title"
+>
+  <div class="max-w-content mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p id="cookie-consent-title" class="text-sm text-gray-200 text-center sm:text-left">
+      {t.message}
+      <a href={privacyUrl} class="underline hover:text-white ml-1">{t.privacy}</a>
+    </p>
+    <div class="flex gap-3 shrink-0">
+      <button
+        id="cookie-reject"
+        class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
+      >
+        {t.reject}
+      </button>
+      <button
+        id="cookie-accept"
+        class="px-4 py-2 text-sm font-medium bg-blue hover:bg-blue-light rounded transition-colors"
+      >
+        {t.accept}
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const consent = localStorage.getItem('cookie-consent');
+    const banner = document.getElementById('cookie-consent');
+
+    // If no consent stored, show banner
+    if (!consent && banner) {
+      setTimeout(() => {
+        banner.classList.remove('translate-y-full');
+      }, 500);
+    }
+
+    // If consent was given, enable analytics
+    if (consent === 'accepted') {
+      enableAnalytics();
+    }
+
+    function enableAnalytics() {
+      // Google Analytics is already loaded, just enable data collection
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+    }
+
+    function disableAnalytics() {
+      if (window.gtag) {
+        window.gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+      }
+    }
+
+    // Handle accept
+    document.getElementById('cookie-accept')?.addEventListener('click', function() {
+      localStorage.setItem('cookie-consent', 'accepted');
+      enableAnalytics();
+      banner?.classList.add('translate-y-full');
+    });
+
+    // Handle reject
+    document.getElementById('cookie-reject')?.addEventListener('click', function() {
+      localStorage.setItem('cookie-consent', 'rejected');
+      disableAnalytics();
+      banner?.classList.add('translate-y-full');
+    });
+  })();
+</script>

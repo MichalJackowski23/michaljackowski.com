@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Privacy Policy | Prof. Michał Jackowski" lang="en">
+  <Header lang="en" />
+  <main>
+    <section class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12">
+        <h1 class="text-display text-navy mb-8">Privacy Policy</h1>
+        <p class="text-small text-slate mb-12">Last updated: May 2025</p>
+
+        <div class="prose prose-navy max-w-none space-y-8">
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Data Controller</h2>
+            <p class="text-body text-slate">
+              Prof. Michał Jackowski<br />
+              Email: m.jackowski@dsk-kancelaria.pl
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Data We Collect</h2>
+            <p class="text-body text-slate mb-4">This website collects:</p>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li><strong>Contact form data:</strong> Name, email address, and message content when you submit the contact form. This data is processed by Web3Forms and sent to my email.</li>
+              <li><strong>Analytics data:</strong> Anonymous usage statistics through Google Analytics (only with your consent). This includes pages visited, time spent, device type, and approximate location at country level.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Legal Basis</h2>
+            <p class="text-body text-slate">
+              Contact form: Legitimate interest (responding to inquiries).<br />
+              Analytics: Your consent (GDPR Art. 6(1)(a)).
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Cookies</h2>
+            <p class="text-body text-slate mb-4">This website uses cookies for:</p>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li><strong>Cookie consent preference:</strong> Stored locally to remember your choice.</li>
+              <li><strong>Google Analytics:</strong> Only activated after you accept cookies. These cookies help understand how visitors use the site.</li>
+            </ul>
+            <p class="text-body text-slate mt-4">
+              You can withdraw consent at any time by clearing your browser's local storage or cookies.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Data Retention</h2>
+            <p class="text-body text-slate">
+              Contact form messages: Retained as long as necessary for correspondence.<br />
+              Analytics data: 14 months (Google Analytics default).
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Your Rights</h2>
+            <p class="text-body text-slate mb-4">Under GDPR, you have the right to:</p>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li>Access your personal data</li>
+              <li>Rectify inaccurate data</li>
+              <li>Request deletion of your data</li>
+              <li>Object to processing</li>
+              <li>Data portability</li>
+              <li>Lodge a complaint with a supervisory authority</li>
+            </ul>
+            <p class="text-body text-slate mt-4">
+              To exercise these rights, contact: m.jackowski@dsk-kancelaria.pl
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Third-Party Services</h2>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li><strong>Google Analytics:</strong> Privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-blue hover:underline">policies.google.com/privacy</a></li>
+              <li><strong>Web3Forms:</strong> Contact form processing. Privacy policy at <a href="https://web3forms.com/privacy" target="_blank" rel="noopener" class="text-blue hover:underline">web3forms.com/privacy</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Changes</h2>
+            <p class="text-body text-slate">
+              This policy may be updated. Changes will be posted on this page with an updated date.
+            </p>
+          </section>
+        </div>
+
+        <div class="mt-12">
+          <a href="/en" class="text-blue hover:underline">&larr; Back to homepage</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

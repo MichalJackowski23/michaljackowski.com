@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Page Not Found | Strona nie znaleziona" lang="en">
+  <Header lang="en" />
+  <main class="min-h-[60vh] flex items-center justify-center">
+    <div class="text-center px-6 py-16">
+      <p class="text-9xl font-semibold text-navy mb-4">404</p>
+      <p class="text-h2 text-slate mb-8 max-w-md mx-auto">
+        <span id="msg-en">The page you're looking for doesn't exist or has been moved.</span>
+        <span id="msg-pl" class="hidden">Strona, której szukasz, nie istnieje lub została przeniesiona.</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          id="link-home"
+          href="/en"
+          class="inline-block px-6 py-3 bg-blue text-white font-medium rounded hover:bg-blue-light transition-colors"
+        >
+          <span id="home-en">Back to Homepage</span>
+          <span id="home-pl" class="hidden">Powrót do strony głównej</span>
+        </a>
+        <a
+          id="link-contact"
+          href="/en/contact"
+          class="inline-block px-6 py-3 border border-navy text-navy font-medium rounded hover:bg-gray-50 transition-colors"
+        >
+          <span id="contact-en">Contact</span>
+          <span id="contact-pl" class="hidden">Kontakt</span>
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>
+
+<script is:inline>
+  // Detect preferred language client-side
+  (function() {
+    const isPl = navigator.language?.startsWith('pl') || document.referrer?.includes('/pl/');
+
+    if (isPl) {
+      document.getElementById('msg-en')?.classList.add('hidden');
+      document.getElementById('msg-pl')?.classList.remove('hidden');
+      document.getElementById('home-en')?.classList.add('hidden');
+      document.getElementById('home-pl')?.classList.remove('hidden');
+      document.getElementById('contact-en')?.classList.add('hidden');
+      document.getElementById('contact-pl')?.classList.remove('hidden');
+      document.getElementById('link-home')?.setAttribute('href', '/pl');
+      document.getElementById('link-contact')?.setAttribute('href', '/pl/kontakt');
+    }
+  })();
+</script>

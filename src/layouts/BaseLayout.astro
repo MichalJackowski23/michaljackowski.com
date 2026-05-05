@@ -1,15 +1,64 @@
 ---
+import CookieConsent from '@components/CookieConsent.astro';
+
 interface Props {
   title: string;
   description?: string;
   lang?: 'en' | 'pl';
+  image?: string;
+  type?: 'website' | 'article';
 }
 
 const {
   title,
   description = "Prof. Michał Jackowski - Legal Scholar, AI Governance Expert, Attorney at Law",
-  lang = 'en'
+  lang = 'en',
+  image = '/images/michal-jackowski.jpg',
+  type = 'website'
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://michaljackowski.com');
+const imageURL = new URL(image, 'https://michaljackowski.com');
+
+// Schema.org Person data
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Michał Jackowski",
+  "jobTitle": "Professor of AI & Law",
+  "url": "https://michaljackowski.com",
+  "image": imageURL.href,
+  "sameAs": [
+    "https://www.linkedin.com/in/michal-jackowski-prof/"
+  ],
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "DSK Kancelaria",
+      "url": "https://dsk-kancelaria.pl"
+    },
+    {
+      "@type": "Organization",
+      "name": "AnyLawyer",
+      "url": "https://anylawyer.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "SWPS University"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "ESCP Europe"
+    },
+    {
+      "@type": "Organization",
+      "name": "University of Cambridge"
+    }
+  ],
+  "knowsAbout": ["AI Governance", "AI Act", "Legal Technology", "Data Protection", "Cybersecurity"]
+};
 ---
 
 <!doctype html>
@@ -19,16 +68,51 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:locale" content={lang === 'pl' ? 'pl_PL' : 'en_US'} />
+    <meta property="og:site_name" content="Prof. Michał Jackowski" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet" />
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics with Consent Mode -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Default: deny analytics until consent is given
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied'
+      });
+
+      // Check if consent was previously given
+      if (localStorage.getItem('cookie-consent') === 'accepted') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFKMMEDH8V"></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -39,5 +123,6 @@ const {
   </head>
   <body class="font-sans text-navy bg-white antialiased">
     <slot />
+    <CookieConsent lang={lang} />
   </body>
 </html>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<BaseLayout title="Polityka prywatności | Prof. Michał Jackowski" lang="pl">
+  <Header lang="pl" />
+  <main>
+    <section class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto px-6 lg:px-12">
+        <h1 class="text-display text-navy mb-8">Polityka prywatności</h1>
+        <p class="text-small text-slate mb-12">Ostatnia aktualizacja: maj 2025</p>
+
+        <div class="prose prose-navy max-w-none space-y-8">
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Administrator danych</h2>
+            <p class="text-body text-slate">
+              Prof. Michał Jackowski<br />
+              Email: m.jackowski@dsk-kancelaria.pl
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Zbierane dane</h2>
+            <p class="text-body text-slate mb-4">Ta strona zbiera:</p>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li><strong>Dane z formularza kontaktowego:</strong> Imię, adres email i treść wiadomości. Dane są przetwarzane przez Web3Forms i wysyłane na mój email.</li>
+              <li><strong>Dane analityczne:</strong> Anonimowe statystyki użytkowania przez Google Analytics (tylko za Twoją zgodą). Obejmują odwiedzone strony, czas wizyty, typ urządzenia i przybliżoną lokalizację na poziomie kraju.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Podstawa prawna</h2>
+            <p class="text-body text-slate">
+              Formularz kontaktowy: Prawnie uzasadniony interes (odpowiadanie na zapytania).<br />
+              Analityka: Twoja zgoda (RODO art. 6 ust. 1 lit. a).
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Pliki cookie</h2>
+            <p class="text-body text-slate mb-4">Ta strona używa plików cookie do:</p>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li><strong>Zapisania preferencji cookie:</strong> Przechowywane lokalnie, aby zapamiętać Twój wybór.</li>
+              <li><strong>Google Analytics:</strong> Aktywowane tylko po zaakceptowaniu cookies. Pomagają zrozumieć, jak odwiedzający korzystają ze strony.</li>
+            </ul>
+            <p class="text-body text-slate mt-4">
+              Możesz wycofać zgodę w dowolnym momencie, czyszcząc local storage lub cookies w przeglądarce.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Okres przechowywania</h2>
+            <p class="text-body text-slate">
+              Wiadomości z formularza: Przechowywane tak długo, jak wymaga korespondencja.<br />
+              Dane analityczne: 14 miesięcy (domyślne ustawienie Google Analytics).
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Twoje prawa</h2>
+            <p class="text-body text-slate mb-4">Na podstawie RODO masz prawo do:</p>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li>Dostępu do swoich danych osobowych</li>
+              <li>Sprostowania nieprawidłowych danych</li>
+              <li>Żądania usunięcia danych</li>
+              <li>Sprzeciwu wobec przetwarzania</li>
+              <li>Przenoszenia danych</li>
+              <li>Wniesienia skargi do organu nadzorczego (UODO)</li>
+            </ul>
+            <p class="text-body text-slate mt-4">
+              Aby skorzystać z tych praw, napisz: m.jackowski@dsk-kancelaria.pl
+            </p>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Usługi zewnętrzne</h2>
+            <ul class="list-disc pl-6 text-body text-slate space-y-2">
+              <li><strong>Google Analytics:</strong> Polityka prywatności: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" class="text-blue hover:underline">policies.google.com/privacy</a></li>
+              <li><strong>Web3Forms:</strong> Obsługa formularza kontaktowego. Polityka prywatności: <a href="https://web3forms.com/privacy" target="_blank" rel="noopener" class="text-blue hover:underline">web3forms.com/privacy</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-h1 text-navy mb-4">Zmiany</h2>
+            <p class="text-body text-slate">
+              Ta polityka może być aktualizowana. Zmiany będą publikowane na tej stronie z nową datą.
+            </p>
+          </section>
+        </div>
+
+        <div class="mt-12">
+          <a href="/pl" class="text-blue hover:underline">&larr; Powrót do strony głównej</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer lang="pl" />
+</BaseLayout>
