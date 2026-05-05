@@ -1,4 +1,11 @@
----
-// Redirect root to English version
-return Astro.redirect('/en');
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=/en/">
+  <link rel="canonical" href="https://michaljackowski.com/en/">
+  <title>Prof. Michał Jackowski</title>
+  <script>window.location.replace('/en/');</script>
+</head>
+<body></body>
+</html>
