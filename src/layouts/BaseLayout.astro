@@ -7,6 +7,7 @@ interface Props {
   lang?: 'en' | 'pl';
   image?: string;
   type?: 'website' | 'article';
+  alternateUrl?: string; // URL of the alternate language version
 }
 
 const {
@@ -14,11 +15,14 @@ const {
   description = "Prof. Michał Jackowski - Legal Scholar, AI Governance Expert, Attorney at Law",
   lang = 'en',
   image = '/images/michal-jackowski.jpg',
-  type = 'website'
+  type = 'website',
+  alternateUrl
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, 'https://michaljackowski.com');
 const imageURL = new URL(image, 'https://michaljackowski.com');
+const alternateLang = lang === 'en' ? 'pl' : 'en';
+const alternateFullUrl = alternateUrl ? new URL(alternateUrl, 'https://michaljackowski.com').href : null;
 
 // Schema.org Person data
 const personSchema = {
@@ -68,8 +72,18 @@ const personSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Hreflang for alternate language versions -->
+    <link rel="alternate" hreflang={lang} href={canonicalURL} />
+    {alternateFullUrl && (
+      <link rel="alternate" hreflang={alternateLang} href={alternateFullUrl} />
+    )}
+    <link rel="alternate" hreflang="x-default" href="https://michaljackowski.com/en/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content={type} />
@@ -89,10 +103,34 @@ const personSchema = {
     <!-- Schema.org -->
     <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
-    <!-- Fonts -->
+    <!-- Fonts with display=swap for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet" />
+
+    <!-- Focus styles for accessibility -->
+    <style>
+      /* Custom focus styles for better visibility */
+      :focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+      }
+
+      /* Skip link styles */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        padding: 8px 16px;
+        background: #0f172a;
+        color: white;
+        z-index: 100;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 0;
+      }
+    </style>
 
     <!-- Google Analytics with Consent Mode -->
     <script is:inline>
@@ -122,6 +160,10 @@ const personSchema = {
     <title>{title}</title>
   </head>
   <body class="font-sans text-navy bg-white antialiased">
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="skip-link">
+      {lang === 'pl' ? 'Przejdź do treści' : 'Skip to content'}
+    </a>
     <slot />
     <CookieConsent lang={lang} />
   </body>

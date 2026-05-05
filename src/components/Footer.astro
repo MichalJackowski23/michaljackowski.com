@@ -161,24 +161,24 @@ const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`) || `/${
         <!-- Language switcher -->
         <div class="flex gap-2">
           <a
-            href={`/${lang === 'en' ? 'en' : 'pl'}/`}
+            href="/en/"
             class={`px-3 py-1 text-small rounded ${
               lang === 'en'
                 ? 'bg-white text-gray-800 font-medium'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
-            {t.langSwitch.en}
+            EN
           </a>
           <a
-            href={`/${lang === 'pl' ? 'pl' : 'en'}/`.replace('/en/', '/pl/')}
+            href="/pl/"
             class={`px-3 py-1 text-small rounded ${
               lang === 'pl'
                 ? 'bg-white text-gray-800 font-medium'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
-            {t.langSwitch.pl}
+            PL
           </a>
         </div>
       </div>
