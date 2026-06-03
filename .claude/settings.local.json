@@ -35,12 +35,13 @@
       "Bash(sips:*)",
       "WebFetch(domain:rankingi.rp.pl)",
       "WebFetch(domain:eqif.org)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "WebFetch(domain:job-boards.greenhouse.io)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "gmail",
     "drive"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }
