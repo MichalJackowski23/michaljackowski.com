@@ -3,4 +3,5 @@ dist/
 .DS_Store
 *.pdf
 !public/risk-forum-2026-program.pdf
+!public/fria-huderia-reality-of-politics.pdf
 *.docx
