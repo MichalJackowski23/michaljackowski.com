@@ -31,6 +31,9 @@ const speakingAgencies = [
 ];
 
 const mediaAppearances = [
+  { title: 'AI można zaskarżyć. Wdrażanie AI Act', outlet: 'TVN24 BiS · Dzień na świecie', url: 'https://tvn24.pl/biznes/tech/szczyt-ai-w-warszawie-w-2027-roku-andrzej-domanski-i-donald-tusk-zapowiadaja-spotkanie-st9349577', type: 'tv', description: 'O ustawie o systemach sztucznej inteligencji: jak zaskarżyć AI i jak będą działać wiążące opinie indywidualne KRiBSI.' },
+  { title: 'Rosnąca autonomia AI a realny nadzór człowieka', outlet: 'TVN', url: 'https://www.youtube.com/watch?v=hPygZhrrBNs', type: 'tv', description: 'Rozmowa z prof. Dariuszem Jemielniakiem o modelach AI, które obchodzą ograniczenia środowiska testowego.' },
+  { title: 'Nie kontrolujesz AI? Możesz stracić stanowisko', outlet: 'Dziennik Gazeta Prawna · Rynek Prawniczy', url: 'https://edgp.gazetaprawna.pl/wideo/rynek-prawniczy/artykuly/11262496,nie-kontrolujesz-ai-mozesz-stracic-stanowisko.html', type: 'podcast', description: 'Kto odpowiada za błędne wdrożenie AI: legal, IT, compliance czy zarząd.' },
   { title: 'Prawno-biznesowe aspekty sztucznej inteligencji', outlet: 'RDC Radio · Magazyn Ekonomiczny', url: 'https://www.rdc.pl/podcast/magazyn-ekonomiczny_UTwfU2vb8FOR2vCLz4fL?episode=qg0Q0m7RUC2YzdYhqOJz&active_page=1', type: 'radio', description: 'Dyskusja o regulacjach AI i ich wpływie na biznes w Polsce.' },
   { title: 'Przywództwo w świecie AI okiem prawnika', outlet: 'Values Podcast', url: 'https://values.pl/podcast/przywodztwo-w-swiecie-ai-okiem-wybitnego-prawnika/', type: 'podcast', description: 'Przywództwo w erze AI z perspektywy prawnej.' },
   { title: 'Wywiad Dzień Dobry TVN', outlet: 'TVN', url: 'https://player.pl/programy-online/dzien-dobry-tvn-odcinki,15232/odcinek-381,S28E381,201407', type: 'tv', description: 'Poranny program o sztucznej inteligencji w codziennym życiu.' },
@@ -51,20 +54,31 @@ const mediaIcons = {
 
 // Najnowsze konferencje
 const recentConferences = [
-  { title: 'Otwarte Forum AI 2026', event: 'Współorganizator · Panel: Krajobraz AI 2026 — w poszukiwaniu wartości', url: 'https://otwarteforumai.pl/#patrons', year: '2026', type: 'ailaw', location: 'Warszawa', org: '' },
+  { title: 'Zgromadzenie Arbitrów', event: '9 grudnia · Wystąpienie otwierające: odpowiedzialne AI w arbitrażu', url: 'https://sadarbitrazowy.org.pl/blog/2026/11/zgromadzenie-arbitrow-9-grudnia-2026/', year: '2026', type: 'ailaw', location: 'Warszawa', org: 'Sąd Arbitrażowy przy Konfederacji Lewiatan' },
+  { title: 'German Legal Tech Summit 2026', event: '3 grudnia · Panel o europejskim raporcie o AI w praktyce prawniczej', url: 'https://germanlegaltechsummit.com/en', year: '2026', type: 'legaltech', location: 'Hanower', org: '' },
+  { title: 'Świąteczna Gala PSPP', event: '26 listopada · Fireside chat o AI z Pamelą Krzypkowską', url: 'https://www.linkedin.com/posts/pspp-prawnicyprzedsiafvbiorstw-galaagjwiafbteczna-share-7528105803673735168-zv6P/', year: '2026', type: 'legaltech', location: 'Warszawa', org: 'PSPP' },
+  { title: 'AI w urzędzie gminy', event: '25 listopada · Webinar: obowiązki z AI Act dla samorządów', url: 'https://poznaj.2click.pl/ai-act-webinar-ai-w-urzedzie', year: '2026', type: 'ailaw', location: 'Online', org: '2ClickPortal' },
+  { title: 'Panel PILA', event: 'AI w działach prawnych, współpraca z kancelariami, legal a compliance', url: 'https://www.linkedin.com/posts/alina-scisla-rafinska_tzmo-compliance-ai-ugcPost-7527094572573913088-zQj4/', year: '2026', type: 'legaltech', location: 'Poznań', org: 'PILA' },
+  { title: 'World Tech Legal Annual Summit', event: 'Technologia, inwestycje i transgraniczna ochrona innowacji', url: '', year: '2026', type: 'legaltech', location: 'Malta', org: '' },
+  { title: 'ITechLaw European Conference 2026', event: 'Współmoderator · sesja Legal Tech Committee „Your firm has adopted AI. Now what?”', url: 'https://eu2026.itechlaw.org/agenda', year: '2026', type: 'legaltech', location: 'Kopenhaga', org: 'ITechLaw' },
+  { title: 'Zjazd Katedr Teorii i Filozofii Prawa', event: 'Panel o Globalnym Raporcie o AI w praktyce prawniczej', url: '', year: '2026', type: 'ailaw', location: 'Polska', org: '' },
+  { title: '10-lecie DSK Kancelaria', event: 'Wystąpienie otwierające „Go Big. Go Global. Go Together. Go Tech. Go Bold.” i panel', url: 'https://www.youtube.com/watch?v=uO_ZE1hveqs', year: '2026', type: 'business', location: 'Poznań', org: 'DSK Kancelaria' },
+  { title: 'LLMxLaw Conference', event: 'Badania i praktyka legal AI', url: '', year: '2026', type: 'ailaw', location: 'Cambridge', org: '' },
+  { title: 'ICON•S Annual Conference 2026', event: 'Referat: Human Oversight as a Constitutional Safeguard in AI Governance', url: 'https://app.oxfordabstracts.com/events/74960/sessions/221831/download', year: '2026', type: 'ailaw', location: 'Dublin', org: '' },
+  { title: 'Otwarte Forum AI 2026', event: 'Współorganizator · Panel: Krajobraz AI 2026: w poszukiwaniu wartości', url: 'https://otwarteforumai.pl/#patrons', year: '2026', type: 'ailaw', location: 'Warszawa', org: '' },
   { title: 'FutureLaw 2026', event: 'Konferencja Legal Innovation', url: 'https://futurelaw.ee/', year: '2026', type: 'legaltech', location: 'Tallinn', org: '' },
   { title: 'CLAIRE - Inauguracja', event: 'Inauguracyjne posiedzenie Rady Naukowej', url: '', year: '2026', type: 'ailaw', location: 'Łódź', org: 'Uniwersytet Łódzki' },
   { title: 'Risk Forum: Mastering Legal Risk Management', event: 'Zarządzanie ryzykiem prawnym w erze AI', url: '/risk-forum-2026-program.pdf', year: '2026', type: 'ailaw', location: 'Warszawa', org: 'General Counsel Circle' },
   { title: 'Kongres Ochrony Danych i Nowych Technologii', event: 'Panel: Regulacje AI i danych w UE, Chinach i USA', url: 'https://uodo.gov.pl/pl/643/4035', year: '2026', type: 'ailaw', location: 'Warszawa', org: 'UODO' },
-  { title: 'PINT 2025', event: 'Konferencja Legal Innovation', url: 'https://pint24.oirp.krakow.pl/agenda/', year: '2025', type: 'legaltech', location: 'Kraków', org: 'OIRP' },
-  { title: 'Pozitive Tech 2025', event: 'Konferencja Tech', url: 'https://pozitive.tech/prelegenci-zestawien/prof-michal-jackowski/', year: '2025', type: 'tech', location: 'Poznań', org: '' },
-  { title: 'ICAIL 2025', event: 'Międzynarodowa Konferencja AI & Prawo', url: 'https://sites.northwestern.edu/icail2025/agenda/', year: '2025', type: 'ailaw', location: 'Chicago', org: '' },
-  { title: 'LegalTech Talk 2025', event: 'Konferencja Międzynarodowa', url: 'https://www.legaltech-talk.com/agenda-2025/', year: '2025', type: 'legaltech', location: 'Berlin', org: '' },
-  { title: 'Rzeszów AI Summit 2025', event: 'AI dla Prawa, Nauki i Społeczeństwa', url: 'https://www.ur.edu.pl/pl/konferencje/rzeszow-ai-summit-2025-next-generation-artificial-intelligence-for-law-science-innovation-and-society/prelegenci', year: '2025', type: 'ailaw', location: 'Rzeszów', org: '' }
 ];
 
 // Pozostałe konferencje
 const otherConferences = [
+  { title: 'PINT 2025', event: 'Konferencja Legal Innovation', url: 'https://pint24.oirp.krakow.pl/agenda/', year: '2025', type: 'legaltech', location: 'Kraków' },
+  { title: 'Pozitive Tech 2025', event: 'Konferencja Tech', url: 'https://pozitive.tech/prelegenci-zestawien/prof-michal-jackowski/', year: '2025', type: 'tech', location: 'Poznań' },
+  { title: 'ICAIL 2025', event: 'Międzynarodowa Konferencja AI & Prawo', url: 'https://sites.northwestern.edu/icail2025/agenda/', year: '2025', type: 'ailaw', location: 'Chicago' },
+  { title: 'LegalTech Talk 2025', event: 'Konferencja Międzynarodowa', url: 'https://www.legaltech-talk.com/agenda-2025/', year: '2025', type: 'legaltech', location: 'Berlin' },
+  { title: 'Rzeszów AI Summit 2025', event: 'AI dla Prawa, Nauki i Społeczeństwa', url: 'https://www.ur.edu.pl/pl/konferencje/rzeszow-ai-summit-2025-next-generation-artificial-intelligence-for-law-science-innovation-and-society/prelegenci', year: '2025', type: 'ailaw', location: 'Rzeszów' },
   { title: 'FutureLaw 2024', event: 'Innowacje Prawne', url: 'https://futurelaw.ee/futurelaw-2024/', year: '2024', type: 'legaltech', location: 'Tallinn' },
   { title: 'World Technology Law Conference', event: 'ITechLaw', url: 'https://dsk-kancelaria.pl/en/legal-innovations/michal-jackowski-at-world-technology-law-conference-2024/', year: '2024', type: 'legaltech', location: 'Bruksela' },
   { title: 'ML in PL Conference', event: 'Machine Learning', url: 'https://conference2024.mlinpl.org', year: '2024', type: 'tech', location: 'Warszawa' },
@@ -87,6 +101,7 @@ const conferenceTypes = {
 };
 
 const popularArticles = [
+  { title: 'Rogal marciński, czyli Cambozola po poznańsku', outlet: 'Rzeczpospolita', url: 'https://pro.rp.pl/prawo-w-firmie/art45470421-rogal-marcinski-czyli-cambozola-po-poznansku' },
   { title: 'Unia Europejska pominięta w erze AI-cyberbezpieczeństwa. Przypadek Mythos i koniec iluzji cybersuwerenności', outlet: 'Dziennik Gazeta Prawna', url: 'https://edgp.gazetaprawna.pl/opinie/artykuly/11243912,unia-europejska-pominieta-w-erze-aicyberbezpieczenstwa-przypadek-myt.html' },
   { title: 'Z AI zostaniesz chemikiem i prawnikiem', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/rzecz-o-prawie/art41430351-michal-jackowski-michal-araszkiewicz-z-ai-zostaniesz-chemikiem-i-prawnikiem' },
   { title: 'O czym marzą technologicznie prawnicy', outlet: 'Rzeczpospolita', url: 'https://www.rp.pl/rzecz-o-prawie/art40662471-michal-raczkowski-michal-araszkiewicz-o-czym-marza-technologicznie-prawnicy' },
@@ -200,7 +215,7 @@ const popularArticles = [
               <div class="text-4xl">🏆</div>
               <div>
                 <p class="text-caption text-blue mb-1">Indeks Prawników Przyszłości DGP 2026</p>
-                <h3 class="text-h2 text-navy mb-2 group-hover:text-blue transition-colors">Lider: Prawnik — AI & LegalTech</h3>
+                <h3 class="text-h2 text-navy mb-2 group-hover:text-blue transition-colors">Lider: Prawnik AI & LegalTech</h3>
                 <p class="text-body text-slate mb-3">
                   Wyróżnienie jako Lider w kategorii Prawnik - AI & LegalTech w Indeksie Kancelarii i Prawników Przyszłości Dziennika Gazety Prawnej.
                 </p>
@@ -241,7 +256,7 @@ const popularArticles = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {mediaAppearances.map((item) => (
             <a
-              href={item.url}
+              href={item.url || undefined}
               target="_blank"
               rel="noopener noreferrer"
               class="group bg-white rounded-lg border border-gray-200 hover:border-blue hover:shadow-md transition-all overflow-hidden"
@@ -303,7 +318,7 @@ const popularArticles = [
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {recentConferences.map((item) => (
             <a
-              href={item.url}
+              href={item.url || undefined}
               target="_blank"
               rel="noopener noreferrer"
               class="group bg-gradient-to-br from-white to-gray-50 p-5 rounded-xl border border-gray-200 hover:border-blue hover:shadow-lg transition-all"
@@ -329,7 +344,7 @@ const popularArticles = [
         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-3">
           {otherConferences.map((item) => (
             <a
-              href={item.url}
+              href={item.url || undefined}
               target="_blank"
               rel="noopener noreferrer"
               class="group bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"
@@ -357,7 +372,7 @@ const popularArticles = [
         <div class="space-y-4">
           {popularArticles.map((item) => (
             <a
-              href={item.url}
+              href={item.url || undefined}
               target="_blank"
               rel="noopener noreferrer"
               class="block bg-white p-4 rounded-lg border border-gray-200 hover:border-blue transition-colors"

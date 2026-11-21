@@ -86,6 +86,14 @@ const organizations = [
     description: 'Członek zarządu European Quantum Intelligence Foundation (EQIF). Edukacja w zakresie przełomowych technologii i upowszechnianie wiedzy o quantum computing w Polsce.',
     logo: '/images/logos/eqif.png',
     link: 'https://eqif.org'
+  },
+  {
+    id: 'organizacje-adaptacyjne',
+    name: 'Instytut Organizacji Adaptacyjnych',
+    role: 'Ekspert',
+    description: 'Ekspert Instytutu Organizacji Adaptacyjnych, niezależnego centrum badań, edukacji i praktyki, które pomaga organizacjom, także samorządom, dostosować się do zmian technologicznych i odpowiedzialnie wdrażać AI.',
+    logo: '',
+    link: 'https://organizacje-adaptacyjne.pl/'
   }
 ];
 ---
@@ -112,11 +120,15 @@ const organizations = [
             <div id={org.id} class="bg-white p-6 md:p-8 rounded-lg border border-gray-200 hover:border-blue transition-colors">
               <div class="flex flex-col md:flex-row gap-6 items-start">
                 <div class="flex-shrink-0 w-24 md:w-32 flex items-center justify-center">
-                  <img
-                    src={org.logo}
-                    alt={org.name}
-                    class="max-h-12 md:max-h-16 max-w-full object-contain"
-                  />
+                  {org.logo ? (
+                    <img
+                      src={org.logo}
+                      alt={org.name}
+                      class="max-h-12 md:max-h-16 max-w-full object-contain"
+                    />
+                  ) : (
+                    <span class="text-h1 text-navy/30 font-bold">{org.name.split(' ').map((w: string) => w[0]).join('').slice(0, 3)}</span>
+                  )}
                 </div>
                 <div class="flex-1">
                   <div class="flex flex-wrap items-center gap-3 mb-2">
