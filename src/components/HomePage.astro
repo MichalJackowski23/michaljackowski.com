@@ -1,0 +1,295 @@
+---
+interface Props {
+  lang?: 'en' | 'pl';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const yt = (id: string) => `https://www.youtube.com/watch?v=${id}`;
+const thumb = (id: string) => `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+
+const logosTop = [
+  { name: 'DSK Kancelaria', src: '/images/logos/dsk.png', href: 'https://dsk-kancelaria.pl/zespol/michal-jackowski/', cls: 'dsk' },
+  { name: 'AnyLawyer', src: '/images/logos/anylawyer.svg', href: 'https://anylawyer.com', cls: '' }
+];
+
+const logos = [
+  { name: 'EU AI Office', src: '/images/logos/eu-ai-office.svg', href: 'https://digital-strategy.ec.europa.eu/en/policies/ai-office' },
+  { name: 'GRAI, Ministerstwo Cyfryzacji', src: '/images/logos/grai.png', href: 'https://ai.gov.pl/grupa-robocza-ai/wspolpraca-miedzynarodowa' },
+  { name: 'CEN-CENELEC', src: '/images/logos/cen-cenelec.svg', href: 'https://www.cencenelec.eu/areas-of-work/cen-cenelec-topics/artificial-intelligence/' },
+  { name: 'PKN', src: '/images/logos/pkn.png', href: 'https://www.pkn.pl' },
+  { name: 'SWPS University', src: '/images/logos/SWPS.png', href: 'https://swps.pl' },
+  { name: 'Cambridge University', src: '/images/logos/cambridge.svg', href: 'https://www.law.cam.ac.uk' },
+  { name: 'Akademia Leona Koźmińskiego', src: '/images/logos/Kozminski.png', href: 'https://www.kozminski.edu.pl/pl/oferta-edukacyjna/studia-podyplomowe/prawo-sztucznej-inteligencji' },
+  { name: 'Oxford University Press', src: '/images/logos/oup.png', href: 'https://academic.oup.com' },
+  { name: 'European Quantum Intelligence Foundation', src: '/images/logos/eqif.png', href: 'https://eqif.org' }
+];
+
+const content = {
+  en: {
+    kick: 'Prof. Michał Jackowski',
+    h1a: 'Law. AI.',
+    h1b: 'Governance.',
+    lede: 'I help write the EU rules for artificial intelligence, teach lawyers how to use it, and build tools that run on it.',
+    btn1: { label: 'Invite me to speak', href: '/en/contact/#speaking' },
+    btn2: { label: 'Contact', href: '/en/contact/' },
+    stagesA: 'Where I',
+    stagesB: 'speak',
+    stages: [
+      { day: '25', when: 'November · Online', event: 'AI in Municipal Offices', note: 'Webinar on the AI Act' },
+      { day: '26', when: 'November · Warsaw', event: 'PSPP Gala', note: 'Conversation with Pamela Krzypkowska' },
+      { day: '03', when: 'December · Hannover', event: 'German Legal Tech Summit', note: 'Panel on the European report' },
+      { day: '09', when: 'December · Warsaw', event: 'Assembly of Arbitrators', note: 'AI in arbitration' }
+    ],
+    bagelText: 'More than 70 conversations on law and AI with guests from Harvard, Cambridge, Harvey and the European Commission.',
+    bagelMore: 'All episodes',
+    mediaA: 'In the',
+    mediaB: 'media',
+    mediaText: 'Interviews and conversations on TV, radio and other outlets\' podcasts.',
+    mediaMore: 'All appearances',
+    mediaHref: '/en/media/',
+    bagel: [
+      { id: 'NP3bUyrhe5E', title: 'South Korea\'s AI Strategy, with Dr. Inyoung Cheong' },
+      { id: 'HiVlgg4p29I', title: 'Vibe coding: when lawyers become builders, with Jamie Tso' },
+      { id: 'sXZHWLL4-9A', title: 'Inside Harvey, with Gabe Pereyra' }
+    ],
+    media: [
+      { img: '/images/media/tvn24-ai-act.jpg', href: 'https://tvn24.pl/biznes/tech/szczyt-ai-w-warszawie-w-2027-roku-andrzej-domanski-i-donald-tusk-zapowiadaja-spotkanie-st9349577', title: 'TVN24 BiS: AI can be challenged' },
+      { img: thumb('hPygZhrrBNs'), href: yt('hPygZhrrBNs'), title: 'TVN: AI autonomy, with prof. Dariusz Jemielniak' },
+      { img: thumb('JQlwzY1U5_I'), href: 'https://edgp.gazetaprawna.pl/wideo/rynek-prawniczy/artykuly/11262496,nie-kontrolujesz-ai-mozesz-stracic-stanowisko.html', title: 'DGP: Not controlling AI? You could lose your job' }
+    ],
+    whatA: 'What I',
+    whatB: 'do',
+    more: 'Explore',
+    roles: [
+      { title: 'Practice', text: 'DSK Kancelaria, AI Act, Data Governance, Tech M&A', href: '/en/practice/' },
+      { title: 'Governance', text: 'EU AI Office, GRAI, ITechLaw, CEN-CENELEC', href: '/en/governance/' },
+      { title: 'Academia', text: 'SWPS, Cambridge University, OUP, Global Report', href: '/en/academia/' },
+      { title: 'Media', text: 'Monday Bagel, TVN24, DGP', href: '/en/media/' },
+      { title: 'AnyLawyer.com', text: 'AnyLawyer, AI for the whole company', href: '/en/startup/' }
+    ]
+  },
+  pl: {
+    kick: 'Prof. Michał Jackowski',
+    h1a: 'Law. AI.',
+    h1b: 'Governance.',
+    lede: 'Współtworzę unijne zasady dla sztucznej inteligencji, uczę prawników z niej korzystać i buduję narzędzia, które z niej korzystają.',
+    btn1: { label: 'Zaproś na wystąpienie', href: '/pl/kontakt/' },
+    btn2: { label: 'Kontakt', href: '/pl/kontakt/' },
+    stagesA: 'Gdzie',
+    stagesB: 'występuję',
+    stages: [
+      { day: '25', when: 'Listopada · Online', event: 'AI w urzędzie gminy', note: 'Webinar o AI Act' },
+      { day: '26', when: 'Listopada · Warszawa', event: 'Gala PSPP', note: 'Rozmowa z Pamelą Krzypkowską' },
+      { day: '03', when: 'Grudnia · Hanower', event: 'German Legal Tech Summit', note: 'Panel o raporcie europejskim' },
+      { day: '09', when: 'Grudnia · Warszawa', event: 'Zgromadzenie Arbitrów', note: 'AI w arbitrażu' }
+    ],
+    bagelText: 'Ponad 70 rozmów o prawie i AI z gośćmi z Harvardu, Cambridge, Harveya czy Komisji Europejskiej.',
+    bagelMore: 'Wszystkie odcinki',
+    mediaA: 'W',
+    mediaB: 'mediach',
+    mediaText: 'Wywiady i rozmowy w telewizji, radiu i podcastach innych redakcji.',
+    mediaMore: 'Wszystkie wystąpienia',
+    mediaHref: '/pl/media/',
+    bagel: [
+      { id: 'NP3bUyrhe5E', title: 'South Korea\'s AI Strategy, z dr Inyoung Cheong' },
+      { id: 'HiVlgg4p29I', title: 'Vibe coding: when lawyers become builders, z Jamie Tso' },
+      { id: 'sXZHWLL4-9A', title: 'Inside Harvey, z Gabe Pereyrą' }
+    ],
+    media: [
+      { img: '/images/media/tvn24-ai-act.jpg', href: 'https://tvn24.pl/biznes/tech/szczyt-ai-w-warszawie-w-2027-roku-andrzej-domanski-i-donald-tusk-zapowiadaja-spotkanie-st9349577', title: 'TVN24 BiS: AI można zaskarżyć' },
+      { img: thumb('hPygZhrrBNs'), href: yt('hPygZhrrBNs'), title: 'TVN: autonomia AI, z prof. Dariuszem Jemielniakiem' },
+      { img: thumb('JQlwzY1U5_I'), href: 'https://edgp.gazetaprawna.pl/wideo/rynek-prawniczy/artykuly/11262496,nie-kontrolujesz-ai-mozesz-stracic-stanowisko.html', title: 'DGP: Nie kontrolujesz AI? Możesz stracić stanowisko' }
+    ],
+    whatA: 'Czym',
+    whatB: 'się zajmuję',
+    more: 'Poznaj',
+    roles: [
+      { title: 'Praktyka', text: 'DSK Kancelaria, AI Act, Data Governance, Tech M&A', href: '/pl/praktyka/' },
+      { title: 'Governance', text: 'EU AI Office, GRAI, ITechLaw, CEN-CENELEC', href: '/pl/governance/' },
+      { title: 'Nauka', text: 'SWPS, Cambridge University, OUP, Global Report', href: '/pl/nauka/' },
+      { title: 'Media', text: 'Monday Bagel, TVN24, DGP', href: '/pl/media/' },
+      { title: 'AnyLawyer.com', text: 'AnyLawyer, AI dla całej firmy', href: '/pl/startup/' }
+    ]
+  }
+};
+
+const t = content[lang];
+---
+
+<div class="home">
+  <section class="hero">
+    <div class="photo" role="img" aria-label="Prof. Michał Jackowski"></div>
+    <div class="wrap">
+      <p class="kick">{t.kick}</p>
+      <h1>{t.h1a}<br /><span class="gold">{t.h1b}</span></h1>
+      <p class="lede">{t.lede}</p>
+      <div class="btns">
+        <a class="btn p" href={t.btn1.href}>{t.btn1.label}</a>
+        <a class="btn" href={t.btn2.href}>{t.btn2.label}</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="logos">
+    <div class="wrap">
+      <div class="row top">
+        {logosTop.map((l) => (
+          <a class="logo big" href={l.href} target="_blank" rel="noopener noreferrer" title={l.name}>
+            <img class={l.cls} src={l.src} alt={l.name} loading="lazy" />
+          </a>
+        ))}
+      </div>
+      <div class="row">
+        {logos.map((l) => (
+          <a class="logo" href={l.href} target="_blank" rel="noopener noreferrer" title={l.name}>
+            <img src={l.src} alt={l.name} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>{t.stagesA} <span class="gold">{t.stagesB}</span></h2>
+      <div class="stages">
+        {t.stages.map((s) => (
+          <div>
+            <div class="day">{s.day}</div>
+            <div class="when">{s.when}</div>
+            <h3>{s.event}</h3>
+            <p>{s.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap split">
+      <div>
+        <h2>Monday <span class="gold">Bagel</span></h2>
+        <p class="muted">{t.bagelText}</p>
+        <a class="go" href="https://www.youtube.com/@mjackowski/videos" target="_blank" rel="noopener noreferrer">{t.bagelMore} →</a>
+      </div>
+      <div class="eps">
+        {t.bagel.map((e) => (
+          <a class="ep" href={yt(e.id)} target="_blank" rel="noopener noreferrer">
+            <img src={thumb(e.id)} alt="" loading="lazy" />
+            <h3>{e.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="wrap split second">
+      <div>
+        <h2>{t.mediaA} <span class="gold">{t.mediaB}</span></h2>
+        <p class="muted">{t.mediaText}</p>
+        <a class="go" href={t.mediaHref}>{t.mediaMore} →</a>
+      </div>
+      <div class="eps">
+        {t.media.map((e) => (
+          <a class="ep" href={e.href} target="_blank" rel="noopener noreferrer">
+            <img src={e.img} alt="" loading="lazy" />
+            <h3>{e.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>{t.whatA} <span class="gold">{t.whatB}</span></h2>
+      <div class="roles">
+        {t.roles.map((r) => (
+          <a href={r.href}>
+            <h3>{r.title}</h3>
+            <p>{r.text}</p>
+            <span class="go">{t.more} →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .home { --bg:#0c1424; --bg2:#121d33; --ink:#eef1f6; --muted:#93a0b8; --line:#22304b; --gold:#d9b46a;
+    background:var(--bg); color:var(--ink); }
+  .wrap { max-width:1200px; margin:0 auto; padding:0 32px; }
+  .gold { color:var(--gold); }
+  h1, h2, .day, .roles h3 { font-family:'Fraunces', Georgia, serif; font-weight:400; }
+
+  .hero { position:relative; min-height:88vh; display:flex; align-items:flex-end; overflow:hidden; padding-top:80px; }
+  .hero .photo { position:absolute; inset:0; background:url(/images/michal-jackowski.jpg) right 25%/auto 125% no-repeat; opacity:.55; filter:grayscale(.3) contrast(1.05); }
+  .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,var(--bg) 25%,rgba(12,20,36,.6) 60%,rgba(12,20,36,.2)),linear-gradient(0deg,var(--bg),transparent 40%); }
+  .hero .wrap { position:relative; z-index:2; padding-bottom:96px; width:100%; }
+  .kick { color:var(--gold); font-size:13px; letter-spacing:.2em; text-transform:uppercase; margin-bottom:18px; }
+  h1 { font-size:96px; line-height:.95; letter-spacing:-.02em; margin-bottom:28px; }
+  .lede { font-size:19px; line-height:1.6; color:#c3cbda; max-width:46ch; margin-bottom:34px; }
+  .btns { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { padding:14px 24px; border:1px solid #3a4a6a; font-size:14px; font-weight:500; letter-spacing:.02em; transition:.2s; }
+  .btn:hover { border-color:var(--gold); color:var(--gold); }
+  .btn.p { background:var(--gold); color:#1a1405; border-color:var(--gold); }
+  .btn.p:hover { background:#e6c583; color:#1a1405; }
+
+  .logos { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0; }
+  .logos .wrap { display:flex; flex-direction:column; gap:12px; }
+  .row { display:flex; justify-content:center; gap:12px; width:100%; }
+  .row.top { gap:16px; }
+  .logo { flex:1 1 0; background:#f3efe6; height:72px; display:flex; align-items:center; justify-content:center; padding:10px 14px; transition:background .2s; }
+  .logo:hover { background:#fff; }
+  .logo img { max-height:40px; max-width:100%; width:auto; object-fit:contain; }
+  .logo.big { flex:0 0 340px; height:104px; padding:14px 28px; }
+  .logo.big img { max-height:72px; min-width:60%; }
+  .logo.big img.dsk { max-height:none; height:150px; min-width:0; }
+  .logo.big:has(img.dsk) { overflow:hidden; }
+
+  section { padding:96px 0; }
+  h2 { font-size:52px; letter-spacing:-.01em; line-height:1.1; margin-bottom:40px; }
+  .alt { background:var(--bg2); }
+  .muted { color:var(--muted); line-height:1.6; }
+  .go { display:inline-block; margin-top:20px; color:var(--gold); font-size:14px; }
+
+  .stages { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); }
+  .stages > div { padding:28px 24px 28px 0; }
+  .day { font-size:44px; color:var(--gold); line-height:1; }
+  .when { font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:6px 0 14px; }
+  .stages h3 { font-size:17px; font-weight:600; margin-bottom:4px; }
+  .stages p { font-size:14px; color:var(--muted); }
+
+  .split { display:grid; grid-template-columns:1fr 2fr; gap:48px; align-items:start; }
+  .split h2 { margin-bottom:20px; }
+  .split.second { margin-top:64px; }
+  .eps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .ep img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; filter:saturate(.85); transition:filter .2s; }
+  .ep:hover img { filter:none; }
+  .ep h3 { font-size:15px; font-weight:500; margin-top:12px; line-height:1.35; }
+
+  .roles { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .roles a { background:var(--bg); padding:32px 24px; min-height:220px; display:flex; flex-direction:column; justify-content:space-between; transition:.25s; }
+  .roles a:hover { background:#16233d; }
+  .roles h3 { font-size:26px; }
+  .roles p { font-size:13px; color:var(--muted); }
+  .roles .go { margin-top:0; font-size:13px; }
+
+  @media (max-width: 900px) {
+    .wrap { padding:0 20px; }
+    h1 { font-size:56px; }
+    h2 { font-size:38px; }
+    .hero .photo { background-position:70% 20%; background-size:cover; opacity:.35; }
+    .row { flex-wrap:wrap; }
+    .logo { flex:0 0 calc((100% - 24px)/3); }
+    .logo.big { flex:1 1 0; }
+    .stages, .roles { grid-template-columns:1fr 1fr; }
+    .split { grid-template-columns:1fr; gap:24px; }
+    .eps { grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width: 520px) {
+    .eps, .stages, .roles { grid-template-columns:1fr; }
+    .logo { flex-basis:calc((100% - 12px)/2); }
+    .row.top { flex-direction:column; }
+  }
+</style>

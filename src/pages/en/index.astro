@@ -1,24 +1,14 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Header from '@components/Header.astro';
-import Hero from '@components/Hero.astro';
-import Introduction from '@components/Introduction.astro';
-import FivePillars from '@components/FivePillars.astro';
-import Featured from '@components/Featured.astro';
-import Affiliations from '@components/Affiliations.astro';
-import ContactCTA from '@components/ContactCTA.astro';
+import HomePage from '@components/HomePage.astro';
 import Footer from '@components/Footer.astro';
 ---
 
 <BaseLayout title="Prof. Michał Jackowski - AI & Law Expert" lang="en" alternateUrl="/pl/">
-  <Header lang="en" />
-  <main id="main-content">
-    <Hero lang="en" />
-    <Introduction lang="en" />
-    <FivePillars lang="en" />
-    <Featured lang="en" />
-    <Affiliations lang="en" />
-    <ContactCTA lang="en" />
+  <Header lang="en" overlay />
+  <main id="main-content" class="bg-ink">
+    <HomePage lang="en" />
   </main>
   <Footer lang="en" />
 </BaseLayout>

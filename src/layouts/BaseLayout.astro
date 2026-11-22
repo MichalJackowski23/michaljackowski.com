@@ -106,13 +106,13 @@ const personSchema = {
     <!-- Fonts with display=swap for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
     <!-- Focus styles for accessibility -->
-    <style>
+    <style is:global>
       /* Custom focus styles for better visibility */
       :focus-visible {
-        outline: 2px solid #2563eb;
+        outline: 2px solid #d9b46a;
         outline-offset: 2px;
       }
 
@@ -130,6 +130,9 @@ const personSchema = {
       .skip-link:focus {
         top: 0;
       }
+
+      /* Serif headings across the site (homepage style) */
+      h1, h2, .text-display, .text-h1 { font-family: 'Fraunces', Georgia, serif !important; font-weight: 400 !important; letter-spacing: -0.01em; }
     </style>
 
     <!-- Google Analytics with Consent Mode -->

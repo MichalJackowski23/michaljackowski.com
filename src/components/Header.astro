@@ -1,9 +1,29 @@
 ---
 interface Props {
   lang?: 'en' | 'pl';
+  overlay?: boolean;
 }
 
-const { lang = 'en' } = Astro.props;
+const { lang = 'en', overlay = false } = Astro.props;
+
+const navItems = lang === 'en'
+  ? [
+      { label: 'Practice', href: '/en/practice/' },
+      { label: 'Governance', href: '/en/governance/' },
+      { label: 'Academia', href: '/en/academia/' },
+      { label: 'Media', href: '/en/media/' },
+      { label: 'AnyLawyer.com', href: '/en/startup/' },
+      { label: 'Contact', href: '/en/contact/' },
+    ]
+  : [
+      { label: 'Praktyka', href: '/pl/praktyka/' },
+      { label: 'Governance', href: '/pl/governance/' },
+      { label: 'Nauka', href: '/pl/nauka/' },
+      { label: 'Media', href: '/pl/media/' },
+      { label: 'AnyLawyer.com', href: '/pl/startup/' },
+      { label: 'Kontakt', href: '/pl/kontakt/' },
+    ];
+const isActive = (href: string) => Astro.url.pathname.startsWith(href);
 
 const currentPath = Astro.url.pathname;
 
@@ -49,56 +69,45 @@ const enUrl = getAlternateUrl(currentPath, 'en', lang);
 const plUrl = getAlternateUrl(currentPath, 'pl', lang);
 ---
 
-<header class="sticky top-0 z-50 bg-white border-b border-gray-200">
-  <div class="max-w-content mx-auto px-6 lg:px-12">
-    <div class="flex items-center justify-between h-18">
-      <!-- Logo / Name -->
-      <a href={`/${lang}`} class="text-navy font-semibold text-lg hover:text-blue transition-colors">
-        Prof. Michał Jackowski
+<header class:list={[
+  "z-50 w-full",
+  overlay ? "absolute top-0 left-0 bg-transparent" : "sticky top-0 bg-[#0c1424] border-b border-[#22304b]"
+]}>
+  <div class="max-w-[1200px] mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href={`/${lang}/`} class="font-display text-[20px] text-[#eef1f6] hover:text-gold transition-colors">
+        Michał Jackowski
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href={lang === 'en' ? `/en/contact` : `/pl/kontakt`} class="text-navy hover:text-blue transition-colors text-sm font-medium">
-          {lang === 'en' ? 'Contact' : 'Kontakt'}
-        </a>
-
-        <!-- Language Switcher -->
-        <div class="flex items-center gap-1 ml-4">
+      <nav class="hidden lg:flex items-center gap-7">
+        {navItems.map((item) => (
           <a
-            href={enUrl}
+            href={item.href}
             class:list={[
-              "px-2 py-1 text-sm font-medium rounded transition-colors",
-              lang === 'en' ? "bg-navy text-white" : "text-navy hover:bg-gray-100"
+              "text-sm transition-colors",
+              isActive(item.href) ? "text-gold" : "text-[#c9d1df] hover:text-gold"
             ]}
           >
-            EN
+            {item.label}
           </a>
-          <a
-            href={plUrl}
-            class:list={[
-              "px-2 py-1 text-sm font-medium rounded transition-colors",
-              lang === 'pl' ? "bg-navy text-white" : "text-navy hover:bg-gray-100"
-            ]}
-          >
-            PL
-          </a>
-        </div>
+        ))}
+        <span class="flex items-center gap-2 ml-2 text-sm">
+          <a href={enUrl} class:list={[lang === 'en' ? "text-gold" : "text-[#93a0b8] hover:text-gold", "transition-colors"]}>EN</a>
+          <span class="text-[#3a4a6a]">/</span>
+          <a href={plUrl} class:list={[lang === 'pl' ? "text-gold" : "text-[#93a0b8] hover:text-gold", "transition-colors"]}>PL</a>
+        </span>
       </nav>
 
-      <!-- Mobile menu button -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden p-2 text-navy"
+        class="lg:hidden p-2 text-[#eef1f6]"
         aria-label="Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <!-- Hamburger icon -->
         <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-        <!-- Close icon -->
         <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -106,40 +115,16 @@ const plUrl = getAlternateUrl(currentPath, 'pl', lang);
     </div>
   </div>
 
-  <!-- Mobile menu panel -->
-  <nav
-    id="mobile-menu"
-    class="md:hidden hidden bg-white border-b border-gray-200"
-  >
-    <div class="px-6 py-4 space-y-4">
-      <a
-        href={lang === 'en' ? `/en/contact` : `/pl/kontakt`}
-        class="block text-navy hover:text-blue transition-colors text-base font-medium py-2"
-      >
-        {lang === 'en' ? 'Contact' : 'Kontakt'}
-      </a>
-
-      <!-- Mobile Language Switcher -->
-      <div class="flex items-center gap-2 pt-4 border-t border-gray-100">
-        <span class="text-sm text-slate mr-2">{lang === 'en' ? 'Language:' : 'Język:'}</span>
-        <a
-          href={enUrl}
-          class:list={[
-            "px-3 py-1.5 text-sm font-medium rounded transition-colors",
-            lang === 'en' ? "bg-navy text-white" : "text-navy hover:bg-gray-100"
-          ]}
-        >
-          EN
+  <nav id="mobile-menu" class="lg:hidden hidden bg-[#0c1424] border-b border-[#22304b]">
+    <div class="px-5 py-4 space-y-1">
+      {navItems.map((item) => (
+        <a href={item.href} class="block text-[#eef1f6] hover:text-gold transition-colors text-base py-2">
+          {item.label}
         </a>
-        <a
-          href={plUrl}
-          class:list={[
-            "px-3 py-1.5 text-sm font-medium rounded transition-colors",
-            lang === 'pl' ? "bg-navy text-white" : "text-navy hover:bg-gray-100"
-          ]}
-        >
-          PL
-        </a>
+      ))}
+      <div class="flex items-center gap-3 pt-4 mt-2 border-t border-[#22304b] text-sm">
+        <a href={enUrl} class:list={[lang === 'en' ? "text-gold" : "text-[#93a0b8]"]}>EN</a>
+        <a href={plUrl} class:list={[lang === 'pl' ? "text-gold" : "text-[#93a0b8]"]}>PL</a>
       </div>
     </div>
   </nav>

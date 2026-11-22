@@ -6,11 +6,17 @@ export default {
       colors: {
         // Primary colors
         navy: '#1a2b4a',
+        ink: '#0c1424',
+        gold: {
+          DEFAULT: '#d9b46a',
+          dark: '#8a6d2f',
+        },
         slate: '#64748b',
         // Accent colors
+        // Accent: deep gold, readable on white (AA), matches the homepage
         blue: {
-          DEFAULT: '#2563eb',
-          light: '#3b82f6',
+          DEFAULT: '#8a6d2f',
+          light: '#a8863f',
         },
         // Neutrals
         gray: {
@@ -22,7 +28,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        serif: ['Source Serif Pro', 'Georgia', 'serif'],
+        serif: ['Fraunces', 'Georgia', 'serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
       },
       fontSize: {
         // Type scale based on 1.25 ratio

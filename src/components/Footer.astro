@@ -43,7 +43,7 @@ const content = {
         ]
       },
       {
-        title: 'Startup',
+        title: 'AnyLawyer.com',
         links: [
           { label: 'AnyLawyer', href: 'https://anylawyer.com', external: true }
         ]
@@ -97,7 +97,7 @@ const content = {
         ]
       },
       {
-        title: 'Startup',
+        title: 'AnyLawyer.com',
         links: [
           { label: 'AnyLawyer', href: 'https://anylawyer.com', external: true }
         ]
@@ -122,7 +122,7 @@ const currentPath = Astro.url.pathname;
 const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`) || `/${otherLang}/`;
 ---
 
-<footer class="bg-gray-800 text-white py-12 md:py-16">
+<footer class="bg-ink text-white py-12 md:py-16 border-t border-[#22304b]">
   <div class="max-w-content mx-auto px-6 lg:px-12">
     <!-- Footer columns -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
@@ -136,7 +136,7 @@ const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`) || `/${
               <li>
                 <a
                   href={link.href}
-                  class="text-small text-gray-400 hover:text-white transition-colors"
+                  class="text-small text-[#93a0b8] hover:text-gold transition-colors"
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
                 >
@@ -151,7 +151,7 @@ const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`) || `/${
     </div>
 
     <!-- Divider -->
-    <div class="border-t border-gray-700 pt-8">
+    <div class="border-t border-[#22304b] pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
         <!-- Copyright -->
         <p class="text-small text-gray-400">
@@ -164,7 +164,7 @@ const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`) || `/${
             href="/en/"
             class={`px-3 py-1 text-small rounded ${
               lang === 'en'
-                ? 'bg-white text-gray-800 font-medium'
+                ? 'bg-gold text-ink font-medium'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
@@ -174,7 +174,7 @@ const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`) || `/${
             href="/pl/"
             class={`px-3 py-1 text-small rounded ${
               lang === 'pl'
-                ? 'bg-white text-gray-800 font-medium'
+                ? 'bg-gold text-ink font-medium'
                 : 'text-gray-400 hover:text-white'
             }`}
           >
